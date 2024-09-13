@@ -57,7 +57,7 @@ def main() -> int:
         
         try:
             merged_templates = merge_unique_templates([json.load(open(f)) for f in downloaded_files])
-            save_output(args, merged_templates)
+            save_output(args.output, merged_templates, len(downloaded_files))
         except Exception as e:
             print(colorize(f"Error merging templates: {str(e)}", Color.FAIL), file=sys.stderr)
             return 1

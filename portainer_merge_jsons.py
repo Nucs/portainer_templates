@@ -50,17 +50,17 @@ def merge_unique_templates(files: list[dict]) -> dict:
     }
 
 
-def save_output(args: argparse.Namespace, merged_templates: dict) -> None:
-    if args.output in ["-", "/dev/stdout", sys.stdout]:
+def save_output(output: str, merged_templates: dict, num_files: int) -> None:
+    if output in ["-", "/dev/stdout", sys.stdout]:
         sys.stdout.writelines(json.dumps(merged_templates, indent=2) + "\n")
         sys.stdout.flush()
     else:
-        with open(args.output, "w", encoding="utf-8") as f:
+        with open(output, "w", encoding="utf-8") as f:
             json.dump(merged_templates, f, indent=2)
         print(
             colorize(
                 (
-                    f"Merged {len(args.files)} template files\n"
+                    f"Merged {num_files} template files\n"
                     f"Total unique templates: {len(merged_templates['templates'])}\n"
                     f"Output file: {Path(f.name).absolute()}\n"
                 ),
