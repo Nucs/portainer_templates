@@ -22,9 +22,20 @@ if !errorlevel! neq 0 (
     exit /b !errorlevel!
 )
 
-git push
+REM Check if there's a remote named 'origin'
+git remote get-url origin >nul 2>&1
+if !errorlevel! neq 0 (
+    echo No 'origin' remote found. Please set up a remote repository using:
+    echo git remote add origin ^<repository-url^>
+    exit /b 1
+)
+
+REM Try to push to the current branch
+for /f "tokens=*" %%i in ('git rev-parse --abbrev-ref HEAD') do set current_branch=%%i
+git push origin !current_branch!
 if !errorlevel! neq 0 (
     echo Failed to push changes to GitHub. Please check your internet connection and git configuration.
+    echo You can manually push changes using: git push origin !current_branch!
     exit /b !errorlevel!
 )
 
