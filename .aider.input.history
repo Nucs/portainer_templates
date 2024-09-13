@@ -1,0 +1,148 @@
+
+# 2024-09-13 16:08:28.824412
++/add *
+
+# 2024-09-13 16:08:31.079413
++/add *.py
+
+# 2024-09-13 16:08:38.929414
++/add portainer-merge-jsons.py
+
+# 2024-09-13 16:08:43.519414
++/ask describe
+
+# 2024-09-13 16:10:36.088291
++What I have are actually urls, could you write another script that wraps around the existing script and downloads urls: https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json
++https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json
++https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json
++https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json
++https://raw.githubusercontent.com/TheLustriVA/portainer-templates-Nov-2022-collection/main/templates_2_2_rc_2_2.json
++https://raw.githubusercontent.com/ntv-one/portainer/main/template.json
++https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json
++https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json
++https://raw.githubusercontent.com/dnburgess/self-hosted-template/master/template.json
++https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/portainer-2.0/Template/template.json
++https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/templates.json (removed due to error in v2.20)
++https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json 
+
+# 2024-09-13 16:12:10.095145
++/ask which file to run?
+
+# 2024-09-13 16:12:39.343754
++(aider) C:\Users\ELI\Desktop\scratch\scripts\portainer-templates-json-merge>python portainer-download-and-merge.py -o me
++rged_templates.json
++Traceback (most recent call last):
++  File "C:\Users\ELI\Desktop\scratch\scripts\portainer-templates-json-merge\portainer-download-and-merge.py", line 12, in <module>
++    from portainer_merge_jsons import merge_unique_templates, save_output, Color, colorize
++ModuleNotFoundError: No module named 'portainer_merge_jsons'
++
+
+# 2024-09-13 16:12:52.726699
++/clear
+
+# 2024-09-13 16:12:54.264198
++(aider) C:\Users\ELI\Desktop\scratch\scripts\portainer-templates-json-merge>python portainer-download-and-merge.py -o merged_templates.json
++Traceback (most recent call last):
++  File "C:\Users\ELI\Desktop\scratch\scripts\portainer-templates-json-merge\portainer-download-and-merge.py", line 12, in <module>
++    from portainer_merge_jsons import merge_unique_templates, save_output, Color, colorize
++ModuleNotFoundError: No module named 'portainer_merge_jsons'
+
+# 2024-09-13 16:13:24.386755
++rename both scripts to _ instead of -
+
+# 2024-09-13 16:13:43.743217
++/commit
+
+# 2024-09-13 16:13:49.055718
++/add * py
+
+# 2024-09-13 16:13:52.711219
++/add *.py
+
+# 2024-09-13 16:13:57.359732
++/add portainer_download_and_merge.py
+
+# 2024-09-13 16:14:01.391733
++/add portainer_merge_jsons.py
+
+# 2024-09-13 16:14:03.799234
++/drop py
+
+# 2024-09-13 16:14:05.478734
++/commit
+
+# 2024-09-13 16:14:10.001735
++/drop portainer-download-and-merge.py
+
+# 2024-09-13 16:14:12.936127
++/drop portainer-merge-jsons.py
+
+# 2024-09-13 16:14:15.319129
++/clear
+
+# 2024-09-13 16:14:45.583444
++(aider) C:\Users\ELI\Desktop\scratch\scripts\portainer-templates-json-merge>python portainer_download_and_merge.py -o me
++rged_templates.json
++Downloading from https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json...
++Downloading from https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json...
++Downloading from https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json...
++Downloading from https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json...
++Downloading from https://raw.githubusercontent.com/TheLustriVA/portainer-templates-Nov-2022-collection/main/templates_2_2_rc_2_2.json...
++Downloading from https://raw.githubusercontent.com/ntv-one/portainer/main/template.json...
++Downloading from https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json...
++Downloading from https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json...
++Downloading from https://raw.githubusercontent.com/dnburgess/self-hosted-template/master/template.json...
++Downloading from https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/portainer-2.0/Template/template.json...
++Downloading from https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json...
++Successfully downloaded 11 files.
++Error merging templates: 'Namespace' object has no attribute 'files'
+
+# 2024-09-13 16:14:54.633164
++/clear
+
+# 2024-09-13 16:14:59.255165
++(aider) C:\Users\ELI\Desktop\scratch\scripts\portainer-templates-json-merge>python portainer_download_and_merge.py -o me
++rged_templates.json
++Downloading from https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json...
++Downloading from https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json...
++Downloading from https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json...
++Downloading from https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json...
++Downloading from https://raw.githubusercontent.com/TheLustriVA/portainer-templates-Nov-2022-collection/main/templates_2_2_rc_2_2.json...
++Downloading from https://raw.githubusercontent.com/ntv-one/portainer/main/template.json...
++Downloading from https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json...
++Downloading from https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json...
++Downloading from https://raw.githubusercontent.com/dnburgess/self-hosted-template/master/template.json...
++Downloading from https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/portainer-2.0/Template/template.json...
++Downloading from https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json...
++Successfully downloaded 11 files.
++Error merging templates: 'Namespace' object has no attribute 'files' -- DO NOT SCRAPE
+
+# 2024-09-13 16:15:59.752127
++Error merging templates: 'Namespace' object has no attribute 'files'
+
+# 2024-09-13 16:18:33.639216
++/add run.bat
+
+# 2024-09-13 16:18:36.814982
++/clear
+
+# 2024-09-13 16:19:10.112214
++I need this code on github and so each time we regenerate, then run.bat must commit merged-templates.json git push
+
+# 2024-09-13 16:21:09.935686
++/add .github/workflows/build.yml
+
+# 2024-09-13 16:21:19.983189
++/add .github/workflows/release.yml
+
+# 2024-09-13 16:23:00.943610
++/clear
+
+# 2024-09-13 16:23:22.849216
++Instead of hardcoded list, I would like a list that is in a sources.txt
+
+# 2024-09-13 16:23:57.047812
++/run run.bat
+
+# 2024-09-13 16:24:43.103272
++/clear
