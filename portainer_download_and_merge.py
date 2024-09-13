@@ -11,19 +11,9 @@ from typing import List
 # Import the merge function from the existing script
 from portainer_merge_jsons import merge_unique_templates, save_output, Color, colorize
 
-URLS = [
-    "https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json",
-    "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json",
-    "https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json",
-    "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json",
-    "https://raw.githubusercontent.com/TheLustriVA/portainer-templates-Nov-2022-collection/main/templates_2_2_rc_2_2.json",
-    "https://raw.githubusercontent.com/ntv-one/portainer/main/template.json",
-    "https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json",
-    "https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json",
-    "https://raw.githubusercontent.com/dnburgess/self-hosted-template/master/template.json",
-    "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/portainer-2.0/Template/template.json",
-    "https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json"
-]
+def read_urls_from_file(file_path: str) -> List[str]:
+    with open(file_path, 'r') as f:
+        return [line.strip() for line in f if line.strip()]
 
 def download_json(url: str) -> dict:
     try:
@@ -36,11 +26,17 @@ def download_json(url: str) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Download and merge Portainer templates from multiple URLs")
     parser.add_argument("-o", "--output", help="Output file (default: stdout)", default="-")
+    parser.add_argument("-s", "--sources", help="File containing source URLs", default="sources.txt")
     args = parser.parse_args()
+
+    urls = read_urls_from_file(args.sources)
+    if not urls:
+        print(colorize("No URLs found in the sources file.", Color.FAIL), file=sys.stderr)
+        return 1
 
     downloaded_files = []
     with tempfile.TemporaryDirectory() as temp_dir:
-        for i, url in enumerate(URLS):
+        for i, url in enumerate(urls):
             print(f"Downloading from {url}...", flush=True)
             data = download_json(url)
             if data:
