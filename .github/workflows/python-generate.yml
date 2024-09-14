@@ -22,28 +22,33 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Check if main branch exists
-      id: check_main
-      run: |
-        git ls-remote --exit-code --heads origin main && echo "main_exists=true" >> $GITHUB_OUTPUT || echo "main_exists=false" >> $GITHUB_OUTPUT
-    - name: Check for changes in sources.txt
+    - name: Check if main branch exists and for changes in sources.txt
       id: check_changes
-      if: steps.check_main.outputs.main_exists == 'true'
       run: |
-        git diff --name-only origin/main ${{ github.sha }} | grep -q "sources.txt" && echo "sources_changed=true" >> $GITHUB_OUTPUT || echo "sources_changed=false" >> $GITHUB_OUTPUT
+        if git ls-remote --exit-code --heads origin main; then
+          echo "main_exists=true" >> $GITHUB_OUTPUT
+          if git diff --name-only origin/main ${{ github.sha }} | grep -q "sources.txt"; then
+            echo "sources_changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "sources_changed=false" >> $GITHUB_OUTPUT
+          fi
+        else
+          echo "main_exists=false" >> $GITHUB_OUTPUT
+          echo "sources_changed=true" >> $GITHUB_OUTPUT
+        fi
     - name: Regenerate merged_templates.json
-      if: steps.check_main.outputs.main_exists == 'false' || steps.check_changes.outputs.sources_changed == 'true'
+      if: steps.check_changes.outputs.main_exists == 'false' || steps.check_changes.outputs.sources_changed == 'true'
       run: |
         python portainer_download_and_merge.py -o merged_templates.json
     - name: Commit changes
-      if: steps.check_main.outputs.main_exists == 'false' || steps.check_changes.outputs.sources_changed == 'true'
+      if: steps.check_changes.outputs.main_exists == 'false' || steps.check_changes.outputs.sources_changed == 'true'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add merged_templates.json
         git commit -m "Regenerate merged_templates.json" || echo "No changes to commit"
     - name: Push changes
-      if: steps.check_main.outputs.main_exists == 'false' || steps.check_changes.outputs.sources_changed == 'true'
+      if: steps.check_changes.outputs.main_exists == 'false' || steps.check_changes.outputs.sources_changed == 'true'
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
