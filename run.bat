@@ -1,6 +1,10 @@
 @echo off
 setlocal enabledelayedexpansion
 
+REM This script automates the process of generating merged Portainer templates,
+REM committing the changes, and pushing them to GitHub.
+REM It requires a conda environment named 'aider' and assumes you're in a git repository.
+
 REM Activate conda environment
 call conda activate aider || (
     echo Failed to activate conda environment 'aider'. Please make sure it exists.

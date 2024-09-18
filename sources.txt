@@ -1,2 +1,6 @@
+# This file contains URLs to Portainer template JSON files.
+# Each line should contain a single URL.
+# Lines starting with '#' are treated as comments and ignored.
+
 https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json
 https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json

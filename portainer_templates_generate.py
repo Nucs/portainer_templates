@@ -1,5 +1,18 @@
 #!/usr/bin/env python3
 
+"""
+This script downloads and merges Portainer templates from multiple URLs.
+It reads source URLs from a file, downloads JSON data from each URL,
+merges the templates, and saves the result to an output file.
+
+Usage:
+    python portainer_templates_generate.py [-o OUTPUT] [-s SOURCES]
+
+Arguments:
+    -o, --output: Output file path (default: releases\templates.json)
+    -s, --sources: File containing source URLs (default: sources.txt)
+"""
+
 import argparse
 import json
 import os
@@ -24,7 +37,7 @@ def colorize(text: str, color: str) -> str:
 
 def read_urls_from_file(file_path: str) -> List[str]:
     with open(file_path, 'r') as f:
-        return [line.strip() for line in f if line.strip()]
+        return [line.strip() for line in f if line.strip() and not line.strip().startswith('#')]
 
 
 def download_json(url: str) -> dict:
