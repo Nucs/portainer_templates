@@ -1,11 +1,11 @@
 # portainer_templates
 
-This project provides a Python script and automated pipelines that generates a merged Portainer templates file from multiple sources. 
+This project provides a Python script and automated pipelines that generates a merge Portainer templates file from multiple sources into a single templates.json you can reference in portainer settings.
 
-It's designed to combine templates from various URLs and local files into a single, comprehensive template file for use with Portainer.
+Capable of combining templates from various URLs and local files into a single, comprehensive template file for use with Portainer.
 
-**Fork** me! and the have your own automation for generating!<br/>
-**Pull Request** me! and add another source of local repository or url for a portainer templates json.
+**Fork** me! and the have your own automation for generating in a private/public!<br/>
+**Pull Request** me! and add your / other templates.json to this project.
 
 ## Features
 
@@ -14,9 +14,8 @@ It's designed to combine templates from various URLs and local files into a sing
 - Generates a single JSON file compatible with Portainer
 - Automated weekly updates via GitHub Actions
 - Distinction of templates between all sources
-- Case-insensitive grouping of templates
-- Generates both clean (grouped) and unclean (all) template files
-- Implements distinct-by-all approach before grouping
+- Case-insensitive distinction of templates
+- Generates both non-unqiue/unclean and clean template files
 ## Installation
 
 Add this URL in Portainer's settings:
@@ -59,17 +58,17 @@ https://raw.githubusercontent.com/Nucs/portainer_templates/main/releases/templat
 
 ### Automated Execution (Windows)
 
-Use the `run.bat` script:
+   Use the `run.bat` script:
+   
+   ```
+   run.bat
+   ```
 
-```
-run.bat
-```
+   To commit and push changes to git, use:
 
-To commit and push changes to git, use:
-
-```
-run.bat --commit
-```
+   ```
+   run.bat --commit
+   ```
 
 ## License
 
