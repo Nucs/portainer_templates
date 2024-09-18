@@ -11,7 +11,6 @@ https://raw.githubusercontent.com/TheLustriVA/portainer-templates-Nov-2022-colle
 https://raw.githubusercontent.com/ntv-one/portainer/main/template.json
 https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json
 https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json
-https://raw.githubusercontent.com/dnburgess/self-hosted-template/master/template.json
 https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/portainer-2.0/Template/template.json
 https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json
 
