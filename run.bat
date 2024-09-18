@@ -8,14 +8,14 @@ call conda activate aider || (
 )
 
 REM Run the Python script
-python portainer_templates_generate.py -o merged_templates.json
+python portainer_templates_generate.py
 if !errorlevel! neq 0 (
     echo Failed to run portainer_templates_generate.py
     exit /b !errorlevel!
 )
 
 REM Git operations
-git add merged_templates.json
+git add releases\templates.json
 git commit -m "Update merged_templates.json"
 if !errorlevel! neq 0 (
     echo Failed to commit changes. There might be no changes or a git error occurred.
