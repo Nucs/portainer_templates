@@ -8,9 +8,9 @@ call conda activate aider || (
 )
 
 REM Run the Python script
-python portainer_download_and_merge.py -o merged_templates.json
+python portainer_templates_generate.py -o merged_templates.json
 if !errorlevel! neq 0 (
-    echo Failed to run portainer_download_and_merge.py
+    echo Failed to run portainer_templates_generate.py
     exit /b !errorlevel!
 )
 
