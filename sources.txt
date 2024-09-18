@@ -5,6 +5,15 @@
 # Remote URLs
 https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json
 https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json
+https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json
+https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json
+https://raw.githubusercontent.com/TheLustriVA/portainer-templates-Nov-2022-collection/main/templates_2_2_rc_2_2.json
+https://raw.githubusercontent.com/ntv-one/portainer/main/template.json
+https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json
+https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json
+https://raw.githubusercontent.com/dnburgess/self-hosted-template/master/template.json
+https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/portainer-2.0/Template/template.json
+https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json
 
 # Local file paths (absolute)
 # C:\Users\YourUsername\Documents\portainer_templates\local_templates.json
@@ -14,4 +23,5 @@ https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/temp
 # ./local_templates.json
 # ../templates/another_template.json
 
-# Uncomment and modify the examples above to use your own local templates
+# Local files within the repository are to be placed relative to the portainer_templates_generate.py file at ./repo/my-templates.json
+# ./repo/template-on-my-github-repo.json

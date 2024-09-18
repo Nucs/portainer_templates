@@ -1,4 +1,4 @@
-# Portainer Templates Generator
+# portainer_templates
 
 This project provides a Python script and automated pipelines that generates a merged Portainer templates file from multiple sources. 
 
