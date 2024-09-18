@@ -755,3 +755,33 @@
 
 # 2024-09-18 10:28:37.031579
 +/ls
+
+# 2024-09-18 10:32:26.152098
++/drop portainer_download_and_merge.py
+
+# 2024-09-18 10:32:30.665127
++/drop portainer_merge_jsons.py
+
+# 2024-09-18 10:32:34.912236
++/add .github\workflows\python-generate.yml
+
+# 2024-09-18 10:32:41.710903
++/drop .github\workflows\python-generate.yml
+
+# 2024-09-18 10:33:08.728177
++Write documentation at the top of the files, support comment in sources.txt
+
+# 2024-09-18 10:33:23.896744
++Remove this # Lines starting with '#' are treated as comments and ignored.
+
+# 2024-09-18 10:34:20.943761
++Add support for full or relative file path in the sources.txt
+
+# 2024-09-18 10:34:41.337554
++Add examples to sources.txt
+
+# 2024-09-18 10:35:56.824425
++Make run.bat not commit unless --commit is specified
+
+# 2024-09-18 10:36:26.136273
++/drop releases\templates.json
