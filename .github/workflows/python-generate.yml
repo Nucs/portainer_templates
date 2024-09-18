@@ -31,6 +31,14 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git checkout main
         git add releases/templates.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update templates.json" && git push origin main)
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update templates.json"
+          if [ "${{ github.event_name }}" == "push" ]; then
+            git push origin HEAD:${{ github.ref }}
+          elif [ "${{ github.event_name }}" == "pull_request" ]; then
+            git push origin HEAD:${{ github.head_ref }}
+          fi
+        fi
