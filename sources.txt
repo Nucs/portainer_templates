@@ -1,5 +1,17 @@
-# This file contains URLs to Portainer template JSON files.
-# Each line should contain a single URL.
+# This file contains URLs or file paths to Portainer template JSON files.
+# Each line should contain a single URL or file path.
+# Examples:
 
+# Remote URLs
 https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json
 https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json
+
+# Local file paths (absolute)
+# C:\Users\YourUsername\Documents\portainer_templates\local_templates.json
+# /home/yourusername/portainer_templates/local_templates.json
+
+# Local file paths (relative to this file)
+# ./local_templates.json
+# ../templates/another_template.json
+
+# Uncomment and modify the examples above to use your own local templates
