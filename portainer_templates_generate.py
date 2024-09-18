@@ -22,6 +22,7 @@ import urllib.request
 import traceback as tb
 from pathlib import Path
 from typing import List, Literal, NamedTuple, Union
+from itertools import groupby
 
 
 class Color(NamedTuple):
@@ -68,10 +69,33 @@ def download_json(url: str) -> dict:
         print(colorize(f"Error downloading {url}: {str(e)}", Color.FAIL), file=sys.stderr)
         return None
 
+def group_and_distinct_templates(templates: List[dict]) -> List[dict]:
+    def group_key(template):
+        return (
+            template.get("command", ""),
+            template.get("platform", ""),
+            ",".join(sorted(template.get("volumes", []))),
+            ",".join(sorted(template.get("ports", []))),
+            template.get("image", ""),
+            template.get("type", "")
+        )
+
+    def sort_key(template):
+        return sum(len(json.dumps(template.get(field, ""))) for field in ["env", "description", "title", "note", "ports"])
+
+    # Sort templates by group key
+    sorted_templates = sorted(templates, key=group_key)
+
+    # Group templates and select the one with the highest sort key from each group
+    distinct_templates = []
+    for _, group in groupby(sorted_templates, key=group_key):
+        distinct_templates.append(max(group, key=sort_key))
+
+    return distinct_templates
 
 def merge_unique_templates(files: list[dict]) -> dict:
     version = None
-    unique_templates = []
+    all_templates = []
     for f in files:
         if version is None:
             version = f["version"]
@@ -89,13 +113,12 @@ def merge_unique_templates(files: list[dict]) -> dict:
             )
             sys.exit(1)
 
-        templates: list[dict] = f["templates"]
-        for t in templates:
-            if t not in unique_templates:
-                unique_templates.append(t)
+        all_templates.extend(f["templates"])
+
+    distinct_templates = group_and_distinct_templates(all_templates)
     return {
         "version": version,
-        "templates": unique_templates,
+        "templates": distinct_templates,
     }
 
 
