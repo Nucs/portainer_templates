@@ -71,13 +71,16 @@ def download_json(url: str) -> dict:
 
 def group_and_distinct_templates(templates: List[dict]) -> List[dict]:
     def group_key(template):
+        def to_str(value):
+            return json.dumps(value) if isinstance(value, dict) else str(value)
+    
         return (
-            template.get("command", ""),
-            template.get("platform", ""),
-            ",".join(sorted(template.get("volumes", []))),
-            ",".join(sorted(template.get("ports", []))),
-            template.get("image", ""),
-            template.get("type", "")
+            to_str(template.get("command", "")),
+            to_str(template.get("platform", "")),
+            ",".join(sorted(to_str(v) for v in template.get("volumes", []))),
+            ",".join(sorted(to_str(p) for p in template.get("ports", []))),
+            to_str(template.get("image", "")),
+            to_str(template.get("type", ""))
         )
 
     def sort_key(template):
