@@ -797,3 +797,19 @@
 
 # 2024-09-18 11:14:10.010978
 +/commit
+
+# 2024-09-18 11:18:43.185882
++All the sources must be sorted before its handled
+
+# 2024-09-18 11:19:45.107015
++0s
++Run git config --local user.email "action@github.com"
++[detached HEAD 1b5cc15] Update templates.json
++ 1 file changed, 41744 insertions(+)
++fatal: You are not currently on a branch.
++To push the history leading to the current (detached HEAD)
++state now, use
++
++    git push origin HEAD:<name-of-remote-branch>
++
++Error: Process completed with exit code 128.
