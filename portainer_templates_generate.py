@@ -120,12 +120,18 @@ def save_output(output: str, merged_templates: dict, num_files: int) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Download and merge Portainer templates from multiple URLs")
-    parser.add_argument("-o", "--output", help="Output file (default: releases\\templates.json)", default="releases\\templates.json")
+    parser.add_argument("-o", "--output", help="Output file (default: releases/templates.json)", default="releases/templates.json")
     parser.add_argument("-s", "--sources", help="File containing source URLs", default="sources.txt")
     args = parser.parse_args()
 
+    # Ensure the output path is valid
+    if not args.output:
+        args.output = "releases/templates.json"
+    
     # Ensure the releases directory exists
-    os.makedirs(os.path.dirname(args.output), exist_ok=True)
+    output_dir = os.path.dirname(args.output)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
 
     urls = read_urls_from_file(args.sources)
     if not urls:
