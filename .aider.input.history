@@ -785,3 +785,17 @@
 
 # 2024-09-18 10:36:26.136273
 +/drop releases\templates.json
+
+# 2024-09-18 10:48:24.859515
++
++Run python portainer_templates_generate.py
++Unknown error occurred during execution
++
++Traceback (most recent call last):
++  File "/home/runner/work/portainer_templates/portainer_templates/portainer_templates_generate.py", line 164, in <module>
++    sys.exit(main())
++  File "/home/runner/work/portainer_templates/portainer_templates/portainer_templates_generate.py", line 128, in main
++    os.makedirs(os.path.dirname(args.output), exist_ok=True)
++  File "/opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/os.py", line 225, in makedirs
++    mkdir(name, mode)
++FileNotFoundError: [Errno 2] No such file or directory: ''
