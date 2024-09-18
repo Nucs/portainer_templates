@@ -170,3 +170,516 @@
 
 # 2024-09-13 19:54:55.761825
 +Please work on python-regenerate.yml to detect if sources.txt has changed in the pull request, if so then regenerate the `merged_templates` file and commit to the pull request
+
+# 2024-09-13 19:59:28.611299
++2024-09-13T16:57:25.1885617Z Current runner version: '2.319.1'
++2024-09-13T16:57:25.1909649Z ##[group]Operating System
++2024-09-13T16:57:25.1910370Z Ubuntu
++2024-09-13T16:57:25.1910737Z 22.04.4
++2024-09-13T16:57:25.1911057Z LTS
++2024-09-13T16:57:25.1911418Z ##[endgroup]
++2024-09-13T16:57:25.1911819Z ##[group]Runner Image
++2024-09-13T16:57:25.1912248Z Image: ubuntu-22.04
++2024-09-13T16:57:25.1912688Z Version: 20240908.1.0
++2024-09-13T16:57:25.1913687Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240908.1/images/ubuntu/Ubuntu2204-Readme.md
++2024-09-13T16:57:25.1915109Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240908.1
++2024-09-13T16:57:25.1916331Z ##[endgroup]
++2024-09-13T16:57:25.1916967Z ##[group]Runner Image Provisioner
++2024-09-13T16:57:25.1917684Z 2.0.384.1
++2024-09-13T16:57:25.1918292Z ##[endgroup]
++2024-09-13T16:57:25.1933310Z ##[group]GITHUB_TOKEN Permissions
++2024-09-13T16:57:25.1934888Z Contents: write
++2024-09-13T16:57:25.1935291Z Metadata: read
++2024-09-13T16:57:25.1935959Z ##[endgroup]
++2024-09-13T16:57:25.1939029Z Secret source: Actions
++2024-09-13T16:57:25.1939729Z Prepare workflow directory
++2024-09-13T16:57:25.2558476Z Prepare all required actions
++2024-09-13T16:57:25.2717342Z Getting action download info
++2024-09-13T16:57:25.4959514Z Download action repository 'actions/checkout@v4' (SHA:692973e3d937129bcbf40652eb9f2f61becf3332)
++2024-09-13T16:57:25.6033106Z Download action repository 'actions/setup-python@v3' (SHA:3542bca2639a428e1796aaa6a2ffef0c0f575566)
++2024-09-13T16:57:25.6821650Z Download action repository 'ad-m/github-push-action@master' (SHA:77c5b412c50b723d2a4fbc6d71fb5723bcd439aa)
++2024-09-13T16:57:26.2471021Z Complete job name: regenerate-templates
++2024-09-13T16:57:26.3426984Z ##[group]Run actions/checkout@v4
++2024-09-13T16:57:26.3427639Z with:
++2024-09-13T16:57:26.3428187Z   repository: Nucs/portainer_templates
++2024-09-13T16:57:26.3429031Z   token: ***
++2024-09-13T16:57:26.3429447Z   ssh-strict: true
++2024-09-13T16:57:26.3429950Z   ssh-user: git
++2024-09-13T16:57:26.3430378Z   persist-credentials: true
++2024-09-13T16:57:26.3430861Z   clean: true
++2024-09-13T16:57:26.3431366Z   sparse-checkout-cone-mode: true
++2024-09-13T16:57:26.3431882Z   fetch-depth: 1
++2024-09-13T16:57:26.3432294Z   fetch-tags: false
++2024-09-13T16:57:26.3432794Z   show-progress: true
++2024-09-13T16:57:26.3433209Z   lfs: false
++2024-09-13T16:57:26.3433597Z   submodules: false
++2024-09-13T16:57:26.3434121Z   set-safe-directory: true
++2024-09-13T16:57:26.3434557Z ##[endgroup]
++2024-09-13T16:57:26.5274157Z Syncing repository: Nucs/portainer_templates
++2024-09-13T16:57:26.5276882Z ##[group]Getting Git version info
++2024-09-13T16:57:26.5278101Z Working directory is '/home/runner/work/portainer_templates/portainer_templates'
++2024-09-13T16:57:26.5279536Z [command]/usr/bin/git version
++2024-09-13T16:57:26.5280052Z git version 2.46.0
++2024-09-13T16:57:26.5298117Z ##[endgroup]
++2024-09-13T16:57:26.5318001Z Temporarily overriding HOME='/home/runner/work/_temp/9ac03c50-e768-4a66-b944-46888907394a' before making global git config changes
++2024-09-13T16:57:26.5320863Z Adding repository directory to the temporary git global config as a safe directory
++2024-09-13T16:57:26.5323902Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/portainer_templates/portainer_templates
++2024-09-13T16:57:26.5360123Z Deleting the contents of '/home/runner/work/portainer_templates/portainer_templates'
++2024-09-13T16:57:26.5363635Z ##[group]Initializing the repository
++2024-09-13T16:57:26.5369009Z [command]/usr/bin/git init /home/runner/work/portainer_templates/portainer_templates
++2024-09-13T16:57:26.5425149Z hint: Using 'master' as the name for the initial branch. This default branch name
++2024-09-13T16:57:26.5426641Z hint: is subject to change. To configure the initial branch name to use in all
++2024-09-13T16:57:26.5428036Z hint: of your new repositories, which will suppress this warning, call:
++2024-09-13T16:57:26.5429394Z hint:
++2024-09-13T16:57:26.5430150Z hint: git config --global init.defaultBranch <name>
++2024-09-13T16:57:26.5431355Z hint:
++2024-09-13T16:57:26.5433273Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
++2024-09-13T16:57:26.5435329Z hint: 'development'. The just-created branch can be renamed via this command:
++2024-09-13T16:57:26.5437151Z hint:
++2024-09-13T16:57:26.5438137Z hint: git branch -m <name>
++2024-09-13T16:57:26.5439808Z Initialized empty Git repository in /home/runner/work/portainer_templates/portainer_templates/.git/
++2024-09-13T16:57:26.5443798Z [command]/usr/bin/git remote add origin https://github.com/Nucs/portainer_templates
++2024-09-13T16:57:26.5477052Z ##[endgroup]
++2024-09-13T16:57:26.5478484Z ##[group]Disabling automatic garbage collection
++2024-09-13T16:57:26.5481956Z [command]/usr/bin/git config --local gc.auto 0
++2024-09-13T16:57:26.5512557Z ##[endgroup]
++2024-09-13T16:57:26.5514094Z ##[group]Setting up auth
++2024-09-13T16:57:26.5520514Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
++2024-09-13T16:57:26.5553181Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
++2024-09-13T16:57:26.5845009Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
++2024-09-13T16:57:26.5880126Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
++2024-09-13T16:57:26.6127622Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
++2024-09-13T16:57:26.6165300Z ##[endgroup]
++2024-09-13T16:57:26.6166532Z ##[group]Fetching the repository
++2024-09-13T16:57:26.6174978Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5b0bb1454115c791002e7e4bbf561edf3c0eb196:refs/remotes/pull/1/merge
++2024-09-13T16:57:27.0998320Z From https://github.com/Nucs/portainer_templates
++2024-09-13T16:57:27.0999777Z  * [new ref]         5b0bb1454115c791002e7e4bbf561edf3c0eb196 -> pull/1/merge
++2024-09-13T16:57:27.1026450Z ##[endgroup]
++2024-09-13T16:57:27.1027197Z ##[group]Determining the checkout info
++2024-09-13T16:57:27.1028398Z ##[endgroup]
++2024-09-13T16:57:27.1033349Z [command]/usr/bin/git sparse-checkout disable
++2024-09-13T16:57:27.1074707Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
++2024-09-13T16:57:27.1104810Z ##[group]Checking out the ref
++2024-09-13T16:57:27.1108460Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1/merge
++2024-09-13T16:57:27.1233327Z Note: switching to 'refs/remotes/pull/1/merge'.
++2024-09-13T16:57:27.1234298Z 
++2024-09-13T16:57:27.1235083Z You are in 'detached HEAD' state. You can look around, make experimental
++2024-09-13T16:57:27.1236457Z changes and commit them, and you can discard any commits you make in this
++2024-09-13T16:57:27.1237654Z state without impacting any branches by switching back to a branch.
++2024-09-13T16:57:27.1238667Z 
++2024-09-13T16:57:27.1239199Z If you want to create a new branch to retain commits you create, you may
++2024-09-13T16:57:27.1240698Z do so (now or later) by using -c with the switch command. Example:
++2024-09-13T16:57:27.1241374Z 
++2024-09-13T16:57:27.1241931Z   git switch -c <new-branch-name>
++2024-09-13T16:57:27.1242390Z 
++2024-09-13T16:57:27.1242627Z Or undo this operation with:
++2024-09-13T16:57:27.1243095Z 
++2024-09-13T16:57:27.1243299Z   git switch -
++2024-09-13T16:57:27.1243591Z 
++2024-09-13T16:57:27.1244307Z Turn off this advice by setting config variable advice.detachedHead to false
++2024-09-13T16:57:27.1245059Z 
++2024-09-13T16:57:27.1245891Z HEAD is now at 5b0bb14 Merge dd24c75a858a3c9f7ad56c5757e73b59d3aca5f3 into 832507a1a5164c9b664935667def335dfdfc7a1e
++2024-09-13T16:57:27.1248574Z ##[endgroup]
++2024-09-13T16:57:27.1281307Z [command]/usr/bin/git log -1 --format='%H'
++2024-09-13T16:57:27.1305189Z '5b0bb1454115c791002e7e4bbf561edf3c0eb196'
++2024-09-13T16:57:27.1624325Z ##[group]Run actions/setup-python@v3
++2024-09-13T16:57:27.1625053Z with:
++2024-09-13T16:57:27.1625344Z   python-version: 3.10
++2024-09-13T16:57:27.1625985Z   token: ***
++2024-09-13T16:57:27.1626329Z ##[endgroup]
++2024-09-13T16:57:27.2790255Z Successfully setup CPython (3.10.14)
++2024-09-13T16:57:27.2928394Z ##[group]Run python -m pip install --upgrade pip
++2024-09-13T16:57:27.2929031Z [36;1mpython -m pip install --upgrade pip[0m
++2024-09-13T16:57:27.2929792Z [36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi[0m
++2024-09-13T16:57:27.2959747Z shell: /usr/bin/bash -e {0}
++2024-09-13T16:57:27.2960131Z env:
++2024-09-13T16:57:27.2960565Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.14/x64
++2024-09-13T16:57:27.2961513Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib
++2024-09-13T16:57:27.2962284Z ##[endgroup]
++2024-09-13T16:57:27.8751084Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages (24.2)
++2024-09-13T16:57:28.1380701Z ##[group]Run git diff --name-only origin/main 5b0bb1454115c791002e7e4bbf561edf3c0eb196 | grep -q "sources.txt" && echo "sources_changed=true" >> $GITHUB_OUTPUT || echo "sources_changed=false" >> $GITHUB_OUTPUT
++2024-09-13T16:57:28.1382704Z [36;1mgit diff --name-only origin/main 5b0bb1454115c791002e7e4bbf561edf3c0eb196 | grep -q "sources.txt" && echo "sources_changed=true" >> $GITHUB_OUTPUT || echo "sources_changed=false" >> $GITHUB_OUTPUT[0m
++2024-09-13T16:57:28.1408315Z shell: /usr/bin/bash -e {0}
++2024-09-13T16:57:28.1408674Z env:
++2024-09-13T16:57:28.1409094Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.14/x64
++2024-09-13T16:57:28.1409773Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib
++2024-09-13T16:57:28.1410248Z ##[endgroup]
++2024-09-13T16:57:28.1477089Z fatal: ambiguous argument 'origin/main': unknown revision or path not in the working tree.
++2024-09-13T16:57:28.1478437Z Use '--' to separate paths from revisions, like this:
++2024-09-13T16:57:28.1479339Z 'git <command> [<revision>...] -- [<file>...]'
++2024-09-13T16:57:28.1603620Z Post job cleanup.
++2024-09-13T16:57:28.2725382Z Post job cleanup.
++2024-09-13T16:57:28.3653380Z [command]/usr/bin/git version
++2024-09-13T16:57:28.3692559Z git version 2.46.0
++2024-09-13T16:57:28.3743750Z Temporarily overriding HOME='/home/runner/work/_temp/9002ddff-c157-4385-9f74-2602fde5452f' before making global git config changes
++2024-09-13T16:57:28.3745041Z Adding repository directory to the temporary git global config as a safe directory
++2024-09-13T16:57:28.3748626Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/portainer_templates/portainer_templates
++2024-09-13T16:57:28.3783354Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
++2024-09-13T16:57:28.3815296Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
++2024-09-13T16:57:28.4061014Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
++2024-09-13T16:57:28.4083018Z http.https://github.com/.extraheader
++2024-09-13T16:57:28.4095536Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
++2024-09-13T16:57:28.4131648Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
++2024-09-13T16:57:28.4585812Z Cleaning up orphan processes
++
+
+# 2024-09-13 19:59:43.146558
++/help
+
+# 2024-09-13 19:59:55.699057
++/settings
+
+# 2024-09-13 20:01:37.003267
++/code 2024-09-13T16:57:25.1885617Z Current runner version: '2.319.1'
++2024-09-13T16:57:25.1909649Z ##[group]Operating System
++2024-09-13T16:57:25.1910370Z Ubuntu
++2024-09-13T16:57:25.1910737Z 22.04.4
++2024-09-13T16:57:25.1911057Z LTS
++2024-09-13T16:57:25.1911418Z ##[endgroup]
++2024-09-13T16:57:25.1911819Z ##[group]Runner Image
++2024-09-13T16:57:25.1912248Z Image: ubuntu-22.04
++2024-09-13T16:57:25.1912688Z Version: 20240908.1.0
++2024-09-13T16:57:25.1913687Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240908.1/images/ubuntu/Ubuntu2204-Readme.md
++2024-09-13T16:57:25.1915109Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240908.1
++2024-09-13T16:57:25.1916331Z ##[endgroup]
++2024-09-13T16:57:25.1916967Z ##[group]Runner Image Provisioner
++2024-09-13T16:57:25.1917684Z 2.0.384.1
++2024-09-13T16:57:25.1918292Z ##[endgroup]
++2024-09-13T16:57:25.1933310Z ##[group]GITHUB_TOKEN Permissions
++2024-09-13T16:57:25.1934888Z Contents: write
++2024-09-13T16:57:25.1935291Z Metadata: read
++2024-09-13T16:57:25.1935959Z ##[endgroup]
++2024-09-13T16:57:25.1939029Z Secret source: Actions
++2024-09-13T16:57:25.1939729Z Prepare workflow directory
++2024-09-13T16:57:25.2558476Z Prepare all required actions
++2024-09-13T16:57:25.2717342Z Getting action download info
++2024-09-13T16:57:25.4959514Z Download action repository 'actions/checkout@v4' (SHA:692973e3d937129bcbf40652eb9f2f61becf3332)
++2024-09-13T16:57:25.6033106Z Download action repository 'actions/setup-python@v3' (SHA:3542bca2639a428e1796aaa6a2ffef0c0f575566)
++2024-09-13T16:57:25.6821650Z Download action repository 'ad-m/github-push-action@master' (SHA:77c5b412c50b723d2a4fbc6d71fb5723bcd439aa)
++2024-09-13T16:57:26.2471021Z Complete job name: regenerate-templates
++2024-09-13T16:57:26.3426984Z ##[group]Run actions/checkout@v4
++2024-09-13T16:57:26.3427639Z with:
++2024-09-13T16:57:26.3428187Z   repository: Nucs/portainer_templates
++2024-09-13T16:57:26.3429031Z   token: ***
++2024-09-13T16:57:26.3429447Z   ssh-strict: true
++2024-09-13T16:57:26.3429950Z   ssh-user: git
++2024-09-13T16:57:26.3430378Z   persist-credentials: true
++2024-09-13T16:57:26.3430861Z   clean: true
++2024-09-13T16:57:26.3431366Z   sparse-checkout-cone-mode: true
++2024-09-13T16:57:26.3431882Z   fetch-depth: 1
++2024-09-13T16:57:26.3432294Z   fetch-tags: false
++2024-09-13T16:57:26.3432794Z   show-progress: true
++2024-09-13T16:57:26.3433209Z   lfs: false
++2024-09-13T16:57:26.3433597Z   submodules: false
++2024-09-13T16:57:26.3434121Z   set-safe-directory: true
++2024-09-13T16:57:26.3434557Z ##[endgroup]
++2024-09-13T16:57:26.5274157Z Syncing repository: Nucs/portainer_templates
++2024-09-13T16:57:26.5276882Z ##[group]Getting Git version info
++2024-09-13T16:57:26.5278101Z Working directory is '/home/runner/work/portainer_templates/portainer_templates'
++2024-09-13T16:57:26.5279536Z [command]/usr/bin/git version
++2024-09-13T16:57:26.5280052Z git version 2.46.0
++2024-09-13T16:57:26.5298117Z ##[endgroup]
++2024-09-13T16:57:26.5318001Z Temporarily overriding HOME='/home/runner/work/_temp/9ac03c50-e768-4a66-b944-46888907394a' before making global git config changes
++2024-09-13T16:57:26.5320863Z Adding repository directory to the temporary git global config as a safe directory
++2024-09-13T16:57:26.5323902Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/portainer_templates/portainer_templates
++2024-09-13T16:57:26.5360123Z Deleting the contents of '/home/runner/work/portainer_templates/portainer_templates'
++2024-09-13T16:57:26.5363635Z ##[group]Initializing the repository
++2024-09-13T16:57:26.5369009Z [command]/usr/bin/git init /home/runner/work/portainer_templates/portainer_templates
++2024-09-13T16:57:26.5425149Z hint: Using 'master' as the name for the initial branch. This default branch name
++2024-09-13T16:57:26.5426641Z hint: is subject to change. To configure the initial branch name to use in all
++2024-09-13T16:57:26.5428036Z hint: of your new repositories, which will suppress this warning, call:
++2024-09-13T16:57:26.5429394Z hint:
++2024-09-13T16:57:26.5430150Z hint: git config --global init.defaultBranch <name>
++2024-09-13T16:57:26.5431355Z hint:
++2024-09-13T16:57:26.5433273Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
++2024-09-13T16:57:26.5435329Z hint: 'development'. The just-created branch can be renamed via this command:
++2024-09-13T16:57:26.5437151Z hint:
++2024-09-13T16:57:26.5438137Z hint: git branch -m <name>
++2024-09-13T16:57:26.5439808Z Initialized empty Git repository in /home/runner/work/portainer_templates/portainer_templates/.git/
++2024-09-13T16:57:26.5443798Z [command]/usr/bin/git remote add origin https://github.com/Nucs/portainer_templates
++2024-09-13T16:57:26.5477052Z ##[endgroup]
++2024-09-13T16:57:26.5478484Z ##[group]Disabling automatic garbage collection
++2024-09-13T16:57:26.5481956Z [command]/usr/bin/git config --local gc.auto 0
++2024-09-13T16:57:26.5512557Z ##[endgroup]
++2024-09-13T16:57:26.5514094Z ##[group]Setting up auth
++2024-09-13T16:57:26.5520514Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
++2024-09-13T16:57:26.5553181Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
++2024-09-13T16:57:26.5845009Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
++2024-09-13T16:57:26.5880126Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
++2024-09-13T16:57:26.6127622Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
++2024-09-13T16:57:26.6165300Z ##[endgroup]
++2024-09-13T16:57:26.6166532Z ##[group]Fetching the repository
++2024-09-13T16:57:26.6174978Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5b0bb1454115c791002e7e4bbf561edf3c0eb196:refs/remotes/pull/1/merge
++2024-09-13T16:57:27.0998320Z From https://github.com/Nucs/portainer_templates
++2024-09-13T16:57:27.0999777Z  * [new ref]         5b0bb1454115c791002e7e4bbf561edf3c0eb196 -> pull/1/merge
++2024-09-13T16:57:27.1026450Z ##[endgroup]
++2024-09-13T16:57:27.1027197Z ##[group]Determining the checkout info
++2024-09-13T16:57:27.1028398Z ##[endgroup]
++2024-09-13T16:57:27.1033349Z [command]/usr/bin/git sparse-checkout disable
++2024-09-13T16:57:27.1074707Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
++2024-09-13T16:57:27.1104810Z ##[group]Checking out the ref
++2024-09-13T16:57:27.1108460Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1/merge
++2024-09-13T16:57:27.1233327Z Note: switching to 'refs/remotes/pull/1/merge'.
++2024-09-13T16:57:27.1234298Z 
++2024-09-13T16:57:27.1235083Z You are in 'detached HEAD' state. You can look around, make experimental
++2024-09-13T16:57:27.1236457Z changes and commit them, and you can discard any commits you make in this
++2024-09-13T16:57:27.1237654Z state without impacting any branches by switching back to a branch.
++2024-09-13T16:57:27.1238667Z 
++2024-09-13T16:57:27.1239199Z If you want to create a new branch to retain commits you create, you may
++2024-09-13T16:57:27.1240698Z do so (now or later) by using -c with the switch command. Example:
++2024-09-13T16:57:27.1241374Z 
++2024-09-13T16:57:27.1241931Z   git switch -c <new-branch-name>
++2024-09-13T16:57:27.1242390Z 
++2024-09-13T16:57:27.1242627Z Or undo this operation with:
++2024-09-13T16:57:27.1243095Z 
++2024-09-13T16:57:27.1243299Z   git switch -
++2024-09-13T16:57:27.1243591Z 
++2024-09-13T16:57:27.1244307Z Turn off this advice by setting config variable advice.detachedHead to false
++2024-09-13T16:57:27.1245059Z 
++2024-09-13T16:57:27.1245891Z HEAD is now at 5b0bb14 Merge dd24c75a858a3c9f7ad56c5757e73b59d3aca5f3 into 832507a1a5164c9b664935667def335dfdfc7a1e
++2024-09-13T16:57:27.1248574Z ##[endgroup]
++2024-09-13T16:57:27.1281307Z [command]/usr/bin/git log -1 --format='%H'
++2024-09-13T16:57:27.1305189Z '5b0bb1454115c791002e7e4bbf561edf3c0eb196'
++2024-09-13T16:57:27.1624325Z ##[group]Run actions/setup-python@v3
++2024-09-13T16:57:27.1625053Z with:
++2024-09-13T16:57:27.1625344Z   python-version: 3.10
++2024-09-13T16:57:27.1625985Z   token: ***
++2024-09-13T16:57:27.1626329Z ##[endgroup]
++2024-09-13T16:57:27.2790255Z Successfully setup CPython (3.10.14)
++2024-09-13T16:57:27.2928394Z ##[group]Run python -m pip install --upgrade pip
++2024-09-13T16:57:27.2929031Z [36;1mpython -m pip install --upgrade pip[0m
++2024-09-13T16:57:27.2929792Z [36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi[0m
++2024-09-13T16:57:27.2959747Z shell: /usr/bin/bash -e {0}
++2024-09-13T16:57:27.2960131Z env:
++2024-09-13T16:57:27.2960565Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.14/x64
++2024-09-13T16:57:27.2961513Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib
++2024-09-13T16:57:27.2962284Z ##[endgroup]
++2024-09-13T16:57:27.8751084Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.10.14/x64/lib/python3.10/site-packages (24.2)
++2024-09-13T16:57:28.1380701Z ##[group]Run git diff --name-only origin/main 5b0bb1454115c791002e7e4bbf561edf3c0eb196 | grep -q "sources.txt" && echo "sources_changed=true" >> $GITHUB_OUTPUT || echo "sources_changed=false" >> $GITHUB_OUTPUT
++2024-09-13T16:57:28.1382704Z [36;1mgit diff --name-only origin/main 5b0bb1454115c791002e7e4bbf561edf3c0eb196 | grep -q "sources.txt" && echo "sources_changed=true" >> $GITHUB_OUTPUT || echo "sources_changed=false" >> $GITHUB_OUTPUT[0m
++2024-09-13T16:57:28.1408315Z shell: /usr/bin/bash -e {0}
++2024-09-13T16:57:28.1408674Z env:
++2024-09-13T16:57:28.1409094Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.14/x64
++2024-09-13T16:57:28.1409773Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib
++2024-09-13T16:57:28.1410248Z ##[endgroup]
++2024-09-13T16:57:28.1477089Z fatal: ambiguous argument 'origin/main': unknown revision or path not in the working tree.
++2024-09-13T16:57:28.1478437Z Use '--' to separate paths from revisions, like this:
++2024-09-13T16:57:28.1479339Z 'git <command> [<revision>...] -- [<file>...]'
++2024-09-13T16:57:28.1603620Z Post job cleanup.
++2024-09-13T16:57:28.2725382Z Post job cleanup.
++2024-09-13T16:57:28.3653380Z [command]/usr/bin/git version
++2024-09-13T16:57:28.3692559Z git version 2.46.0
++2024-09-13T16:57:28.3743750Z Temporarily overriding HOME='/home/runner/work/_temp/9002ddff-c157-4385-9f74-2602fde5452f' before making global git config changes
++2024-09-13T16:57:28.3745041Z Adding repository directory to the temporary git global config as a safe directory
++2024-09-13T16:57:28.3748626Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/portainer_templates/portainer_templates
++2024-09-13T16:57:28.3783354Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
++2024-09-13T16:57:28.3815296Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
++2024-09-13T16:57:28.4061014Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
++2024-09-13T16:57:28.4083018Z http.https://github.com/.extraheader
++2024-09-13T16:57:28.4095536Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
++2024-09-13T16:57:28.4131648Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
++2024-09-13T16:57:28.4585812Z Cleaning up orphan processes
++
+
+# 2024-09-13 20:07:52.234329
++2024-09-13T16:57:28.1408674Z env:
++2024-09-13T16:57:28.1409094Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.14/x64
++2024-09-13T16:57:28.1409773Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib
++2024-09-13T16:57:28.1410248Z ##[endgroup]
++2024-09-13T16:57:28.1477089Z fatal: ambiguous argument 'origin/main': unknown revision or path not in the working tree.
++
++2024-09-13T16:57:28.1478437Z Use '--' to separate paths from revisions, like this:
++2024-09-13T16:57:28.1479339Z 'git <command> [<revision>...] -- [<file>...]'
++2024-09-13T16:57:28.1603620Z Post job cleanup.
++2024-09-13T16:57:28.2725382Z Post job cleanup.
++2024-09-13T16:57:28.3653380Z [command]/usr/bin/git version
++2024-09-13T16:57:28.3692559Z git version 2.46.0
++2024-09-13T16:57:28.3743750Z Temporarily overriding HOME='/home/runner/work/_temp/9002ddff-c157-4385-9f74-2602fde5452f'
++ before making global git config changes
++2024-09-13T16:57:28.3745041Z Adding repository directory to the temporary git global config as a safe directory
++2024-09-13T16:57:28.3748626Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/portainer_tem
++plates/portainer_templates
++2024-09-13T16:57:28.3783354Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
++2024-09-13T16:57:28.3815296Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only
++--get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
++2024-09-13T16:57:28.4061014Z [command]/usr/bin/git config --local --name-only --get-regexp \.\:\/\/github\.com
++\/\.extraheader
++2024-09-13T16:57:28.4083018Z .://github.com/.extraheader
++2024-09-13T16:57:28.4095536Z [command]/usr/bin/git config --local --unset-all .://github.com/.extraheader
++2024-09-13T16:57:28.4131648Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only
++--get-regexp '\.\:\/\/github\.com\/\.extraheader' && git config --local --unset-all '.://github.com/.
++extraheader' || :"
++2024-09-13T16:57:28.4585812Z Cleaning up orphan processes
+
+# 2024-09-13 20:08:05.146493
++/clear
+
+# 2024-09-13 20:08:07.459990
++2024-09-13T16:57:28.1408674Z env:
++2024-09-13T16:57:28.1409094Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.14/x64
++2024-09-13T16:57:28.1409773Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib
++2024-09-13T16:57:28.1410248Z ##[endgroup]
++2024-09-13T16:57:28.1477089Z fatal: ambiguous argument 'origin/main': unknown revision or path not in the working tree.
++
++2024-09-13T16:57:28.1478437Z Use '--' to separate paths from revisions, like this:
++2024-09-13T16:57:28.1479339Z 'git <command> [<revision>...] -- [<file>...]'
++2024-09-13T16:57:28.1603620Z Post job cleanup.
++2024-09-13T16:57:28.2725382Z Post job cleanup.
++2024-09-13T16:57:28.3653380Z [command]/usr/bin/git version
++2024-09-13T16:57:28.3692559Z git version 2.46.0
++2024-09-13T16:57:28.3743750Z Temporarily overriding HOME='/home/runner/work/_temp/9002ddff-c157-4385-9f74-2602fde5452f'
++ before making global git config changes
++2024-09-13T16:57:28.3745041Z Adding repository directory to the temporary git global config as a safe directory
++2024-09-13T16:57:28.3748626Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/portainer_tem
++plates/portainer_templates
++2024-09-13T16:57:28.3783354Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
++2024-09-13T16:57:28.3815296Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only
++--get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
++2024-09-13T16:57:28.4061014Z [command]/usr/bin/git config --local --name-only --get-regexp \.\:\/\/github\.com
++\/\.extraheader
++2024-09-13T16:57:28.4083018Z .://github.com/.extraheader
++2024-09-13T16:57:28.4095536Z [command]/usr/bin/git config --local --unset-all .://github.com/.extraheader
++2024-09-13T16:57:28.4131648Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only
++--get-regexp '\.\:\/\/github\.com\/\.extraheader' && git config --local --unset-all '.://github.com/.
++extraheader' || :"
++2024-09-13T16:57:28.4585812Z Cleaning up orphan processes
+
+# 2024-09-13 20:10:06.475219
++/drop merged_templates.json
+
+# 2024-09-13 20:19:00.916546
++2024-09-13T16:57:28.1408674Z env:
++2024-09-13T16:57:28.1409094Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.14/x64
++2024-09-13T16:57:28.1409773Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.14/x64/lib
++2024-09-13T16:57:28.1410248Z ##[endgroup]
++2024-09-13T16:57:28.1477089Z fatal: ambiguous argument 'origin/main': unknown revision or path not in the working tree.
++
++2024-09-13T16:57:28.1478437Z Use '--' to separate paths from revisions, like this:
++2024-09-13T16:57:28.1479339Z 'git <command> [<revision>...] -- [<file>...]'
++2024-09-13T16:57:28.1603620Z Post job cleanup.
++2024-09-13T16:57:28.2725382Z Post job cleanup.
++2024-09-13T16:57:28.3653380Z [command]/usr/bin/git version
++2024-09-13T16:57:28.3692559Z git version 2.46.0
++2024-09-13T16:57:28.3743750Z Temporarily overriding HOME='/home/runner/work/_temp/9002ddff-c157-4385-9f74-2602fde5452f'
++ before making global git config changes
++2024-09-13T16:57:28.3745041Z Adding repository directory to the temporary git global config as a safe directory
++2024-09-13T16:57:28.3748626Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/portainer_tem
++plates/portainer_templates
++2024-09-13T16:57:28.3783354Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
++2024-09-13T16:57:28.3815296Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only
++--get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
++2024-09-13T16:57:28.4061014Z [command]/usr/bin/git config --local --name-only --get-regexp \.\:\/\/github\.com
++\/\.extraheader
++2024-09-13T16:57:28.4083018Z .://github.com/.extraheader
++2024-09-13T16:57:28.4095536Z [command]/usr/bin/git config --local --unset-all .://github.com/.extraheader
++2024-09-13T16:57:28.4131648Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only
++--get-regexp '\.\:\/\/github\.com\/\.extraheader' && git config --local --unset-all '.://github.com/.
++extraheader' || :"
++2024-09-13T16:57:28.4585812Z Cleaning up orphan processes
+
+# 2024-09-13 20:24:11.158676
++
++0s
++Run git diff --name-only origin/main 28bd885fbb460f59187ce41039455f0ead74432f | grep -q "sources.txt" && echo "sources_changed=true" >> $GITHUB_OUTPUT || echo "sources_changed=false" >> $GITHUB_OUTPUT
++fatal: ambiguous argument 'origin/main': unknown revision or path not in the working tree.
++Use '--' to separate paths from revisions, like this:
++'git <command> [<revision>...] -- [<file>...]'
+
+# 2024-09-13 20:24:25.635164
++/drop merged_templates.json
+
+# 2024-09-13 20:24:27.202163
++/clear
+
+# 2024-09-13 20:24:30.083164
++
++0s
++Run git diff --name-only origin/main 28bd885fbb460f59187ce41039455f0ead74432f | grep -q "sources.txt" && echo "sources_changed=true" >> $GITHUB_OUTPUT || echo "sources_changed=false" >> $GITHUB_OUTPUT
++fatal: ambiguous argument 'origin/main': unknown revision or path not in the working tree.
++Use '--' to separate paths from revisions, like this:
++'git <command> [<revision>...] -- [<file>...]'
+
+# 2024-09-13 20:24:58.962263
++/add .github\workflows\python-generate.yml portainer_download_and_merge.py portainer_merge_jsons.py run.bat sources.txt
+
+# 2024-09-13 20:25:06.386694
++
++0s
++Run git diff --name-only origin/main 28bd885fbb460f59187ce41039455f0ead74432f | grep -q "sources.txt" && echo "sources_changed=true" >> $GITHUB_OUTPUT || echo "sources_changed=false" >> $GITHUB_OUTPUT
++fatal: ambiguous argument 'origin/main': unknown revision or path not in the working tree.
++Use '--' to separate paths from revisions, like this:
++'git <command> [<revision>...] -- [<file>...]' 
+
+# 2024-09-14 07:54:17.620175
++/drop
+
+# 2024-09-14 07:54:25.603966
++/add .github\workflows\python-generate.yml
+
+# 2024-09-14 07:54:31.451467
++/add portainer_download_and_merge.py portainer_merge_jsons.py run.bat sources.txt
+
+# 2024-09-14 07:55:42.003560
++
++Run if git ls-remote --exit-code --heads origin main; then
++832507a1a5164c9b664935667def335dfdfc7a1erefs/heads/main
++fatal: ambiguous argument 'origin/main': unknown revision or path not in the working tree.
++Use '--' to separate paths from revisions, like this:
++'git <command> [<revision>...] -- [<file>...]' --- Fix the typo
+
+# 2024-09-14 07:56:22.385709
++/tokens
+
+# 2024-09-14 07:56:30.715712
++/clear
+
+# 2024-09-14 07:57:36.059430
++/settings
+
+# 2024-09-14 07:58:06.339800
++/read-only *
+
+# 2024-09-14 07:58:09.107301
++/read-only
+
+# 2024-09-14 07:58:12.772467
++/sett
+
+# 2024-09-18 09:26:59.682541
++dir
+
+# 2024-09-18 09:27:03.403483
++/ls
+
+# 2024-09-18 09:27:13.115465
++/add portainer_download_and_merge.py
+
+# 2024-09-18 09:27:26.595287
++/add portainer_merge_jsons.py
+
+# 2024-09-18 09:27:30.580462
++/clear
+
+# 2024-09-18 09:27:37.860286
++/add run.bat
+
+# 2024-09-18 09:27:40.683694
++/add sources.txt
+
+# 2024-09-18 09:27:47.683889
++/clear
+
+# 2024-09-18 09:28:09.795689
++/ask I am interested in simplifying this by refactoring it
+
+# 2024-09-18 09:28:57.107665
++/clear
+
+# 2024-09-18 09:29:05.636130
++/drop merged_templates.json
+
+# 2024-09-18 09:29:07.955794
++/clear
+
+# 2024-09-18 09:30:19.786921
++/commit

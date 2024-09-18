@@ -3,7 +3,7 @@ A portainer templates merger script from sources.txt into a merged.templates.jso
 
 ### Installing
 Add this url in portainer's settings
-https://raw.githubusercontent.com/Nucs/portainer_templates/refs/heads/main/merged_templates.json
+https://raw.githubusercontent.com/Nucs/portainer_templates/refs/heads/main/releases/templates.json
 
 
 ### Contribute
