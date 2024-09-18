@@ -1,6 +1,11 @@
 # Portainer Templates Generator
 
-This project provides a Python script that generates a merged Portainer templates file from multiple sources. It's designed to combine templates from various URLs and local files into a single, comprehensive template file for use with Portainer.
+This project provides a Python script and automated pipelines that generates a merged Portainer templates file from multiple sources. 
+
+It's designed to combine templates from various URLs and local files into a single, comprehensive template file for use with Portainer.
+
+**Fork** me! and the have your own automation for generating!<br/>
+**Pull Request** me! and add another source of local repository or url for a portainer templates json.
 
 ## Features
 
@@ -8,8 +13,19 @@ This project provides a Python script that generates a merged Portainer template
 - Removes duplicate templates
 - Generates a single JSON file compatible with Portainer
 - Automated weekly updates via GitHub Actions
-
+- Distinction of templates between all sources
 ## Installation
+
+Add this URL in Portainer's settings:
+
+```
+https://raw.githubusercontent.com/Nucs/portainer_templates/main/releases/templates.json
+```
+
+## Usage
+
+### Manual Execution
+
 
 1. Clone this repository:
    ```
@@ -22,19 +38,15 @@ This project provides a Python script that generates a merged Portainer template
    pip install -r requirements.txt
    ```
 
-## Usage
+3. Run the script manually:
 
-### Manual Execution
+   ```
+   python portainer_templates_generate.py
+   ```
 
-Run the script manually:
-
-```
-python portainer_templates_generate.py
-```
-
-Optional arguments:
-- `-o`, `--output`: Specify the output file path (default: `releases/templates.json`)
-- `-s`, `--sources`: Specify the file containing source URLs (default: `sources.txt`)
+   Optional arguments:
+   - `-o`, `--output`: Specify the output file path (default: `releases/templates.json`)
+   - `-s`, `--sources`: Specify the file containing source URLs (default: `sources.txt`)
 
 ### Automated Execution (Windows)
 
@@ -44,24 +56,11 @@ Use the `run.bat` script:
 run.bat
 ```
 
-To commit and push changes automatically, use:
+To commit and push changes to git, use:
 
 ```
 run.bat --commit
 ```
-
-### Using the Generated Template in Portainer
-
-Add this URL in Portainer's settings:
-
-```
-https://raw.githubusercontent.com/Nucs/portainer_templates/main/releases/templates.json
-```
-
-## Contributing
-
-1. Add new template sources to `sources.txt`.
-2. Create a pull request with your changes.
 
 ## License
 
