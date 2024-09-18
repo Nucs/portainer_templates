@@ -70,9 +70,15 @@ def download_json(url: str) -> dict:
         return None
 
 def group_and_distinct_templates(templates: List[dict]) -> List[dict]:
+    def template_to_tuple(template):
+        return tuple(sorted((k, json.dumps(v, sort_keys=True).lower()) for k, v in template.items()))
+
+    # First, make templates distinct by all fields
+    distinct_templates = list({template_to_tuple(template): template for template in templates}.values())
+
     def group_key(template):
         def to_str(value):
-            return json.dumps(value).lower() if isinstance(value, dict) else str(value).lower()
+            return json.dumps(value, sort_keys=True).lower() if isinstance(value, dict) else str(value).lower()
 
         return (
             to_str(template.get("command", "")),
@@ -86,15 +92,15 @@ def group_and_distinct_templates(templates: List[dict]) -> List[dict]:
     def sort_key(template):
         return sum(len(json.dumps(template.get(field, ""))) for field in ["env", "description", "title", "note", "ports"])
 
-    # Sort templates by group key
-    sorted_templates = sorted(templates, key=group_key)
+    # Sort distinct templates by group key
+    sorted_templates = sorted(distinct_templates, key=group_key)
 
     # Group templates and select the one with the highest sort key from each group
-    distinct_templates = []
+    final_distinct_templates = []
     for _, group in groupby(sorted_templates, key=group_key):
-        distinct_templates.append(max(group, key=sort_key))
+        final_distinct_templates.append(max(group, key=sort_key))
 
-    return distinct_templates
+    return final_distinct_templates
 
 def merge_unique_templates(files: list[dict]) -> dict:
     version = None
