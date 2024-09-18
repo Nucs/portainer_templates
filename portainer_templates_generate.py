@@ -81,11 +81,13 @@ def group_and_distinct_templates(templates: List[dict]) -> List[dict]:
             return json.dumps(value, sort_keys=True).lower() if isinstance(value, dict) else str(value).lower()
 
         return (
+            to_str(template.get("name", "")),
             to_str(template.get("command", "")),
             to_str(template.get("platform", "")),
             ",".join(sorted(to_str(v) for v in template.get("volumes", []))),
             ",".join(sorted(to_str(p) for p in template.get("ports", []))),
             to_str(template.get("image", "")),
+            to_str(template.get("repository", "")),
             to_str(template.get("type", ""))
         )
 

@@ -35,7 +35,7 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Update templates.json and templates_unclean.json"
+          git commit -m "[Automated] Regenerated templates"
           if [ "${{ github.event_name }}" == "push" ]; then
             git pull --rebase origin ${{ github.ref }}
             git push origin HEAD:${{ github.ref }}

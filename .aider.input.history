@@ -860,3 +860,103 @@
 +hint: 'git pull' before pushing again.
 +hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 +Error: Process completed with exit code 1.
+
+# 2024-09-18 11:34:46.476691
++/clear
+
+# 2024-09-18 11:34:48.772640
++/drop requirements.txt
+
+# 2024-09-18 11:35:07.418971
++/drop .github\workflows\python-generate.yml
+
+# 2024-09-18 11:35:16.716410
++/drop *
+
+# 2024-09-18 11:35:23.387759
++/add README.md portainer_templates_generate.py run.bat sources.txt
+
+# 2024-09-18 11:35:27.172575
++/drop *
+
+# 2024-09-18 11:35:30.846574
++/read-only README.md portainer_templates_generate.py run.bat sources.txt
+
+# 2024-09-18 11:35:35.956494
++/drop por
+
+# 2024-09-18 11:35:45.988539
++/read-only README.md run.bat sources.txt
+
+# 2024-09-18 11:36:32.860102
++/chat-mode
+
+# 2024-09-18 11:36:43.700850
++/chat-mode udiff
+
+# 2024-09-18 11:43:37.653177
++I would like work on distincting the templates in the before writing to releases (after merging). We need to make sure we group-by "command, platform, volumes, ports, image, type" first (1st ordering) and then taken sum the number of characters in all "env,description,title,note,ports" and use it to then order by descending (2nd ordering)
+
+# 2024-09-18 11:44:03.540748
++/clear
+
+# 2024-09-18 11:44:05.981740
++/chat-mode
+
+# 2024-09-18 11:44:10.981383
++/chat-mode code
+
+# 2024-09-18 11:44:16.805745
++I would like work on distincting the templates in the before writing to releases (after merging). We need to make sure we group-by "command, platform, volumes, ports, image, type" first (1st ordering) and then taken sum the number of characters in all "env,description,title,note,ports" and use it to then order by descending (2nd ordering)
+
+# 2024-09-18 11:45:27.036132
++/undo
+
+# 2024-09-18 11:47:09.422642
++I would like work on distincting the templates in the before writing to releases (after merging).
++We need to make sure we group-by "command, platform, volumes, ports, image, type" first. Then we will distinct by selecting the highest (descending order) sum the characters count in all "env,description,title,note,ports" (even by getting the json of that property like JRaw in C#) - So we end up with 1 template from each group.
+
+# 2024-09-18 11:48:47.886602
++(aider) C:\Users\ELI\Desktop\scratch\scripts\portainer-templates-json-merge>run.bat
++Processing https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json...
++Processing https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json...
++Processing https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/portainer-2.0/Template/template.json...
++Processing https://raw.githubusercontent.com/TheLustriVA/portainer-templates-Nov-2022-collection/main/templates_2_2_rc_2_2.json...
++Processing https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json...
++Processing https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json...
++Processing https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json...
++Processing https://raw.githubusercontent.com/ntv-one/portainer/main/template.json...
++Processing https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json...
++Processing https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json...
++Successfully processed 10 files.
++Error merging templates: sequence item 0: expected str instance, dict found
++Failed to run portainer_templates_generate.py
+
+# 2024-09-18 11:49:15.606027
++(aider) C:\Users\ELI\Desktop\scratch\scripts\portainer-templates-json-merge>run.bat
++
++Successfully processed 10 files.
++Error merging templates: sequence item 0: expected str instance, dict found
++Failed to run portainer_templates_generate.py
+
+# 2024-09-18 13:37:51.491351
++/clear
+
+# 2024-09-18 13:39:06.139729
++The order of templates in the json must be by the title
+
+# 2024-09-18 13:39:33.203173
++I want another file saved to releases/, I want it to be called releases/templates_unclean.json which is one without d
++istinction/groupby
+
+# 2024-09-18 13:41:03.708485
++The groupby must be case-insensitive!
+
+# 2024-09-18 13:44:07.845327
++Before groupby, try distinct by all
+
+# 2024-09-18 13:47:49.404226
++/add .github\workflows\python-generate.yml
+
+# 2024-09-18 13:47:57.211562
++Upgrade .github\workflows\python-generate.yml to recent changes
