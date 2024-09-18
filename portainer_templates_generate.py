@@ -21,7 +21,7 @@ import tempfile
 import urllib.request
 import traceback as tb
 from pathlib import Path
-from typing import List, Literal, NamedTuple
+from typing import List, Literal, NamedTuple, Union
 
 
 class Color(NamedTuple):
@@ -35,9 +35,28 @@ def colorize(text: str, color: str) -> str:
     return f"{color}{text}{Color.ENDC}"
 
 
+def is_url(path: str) -> bool:
+    return path.startswith(('http://', 'https://'))
+
 def read_urls_from_file(file_path: str) -> List[str]:
+    base_dir = os.path.dirname(os.path.abspath(file_path))
     with open(file_path, 'r') as f:
-        return [line.strip() for line in f if line.strip() and not line.strip().startswith('#')]
+        return [
+            line.strip() if is_url(line.strip()) else os.path.join(base_dir, line.strip())
+            for line in f
+            if line.strip() and not line.strip().startswith('#')
+        ]
+
+def download_or_read_json(source: str) -> Union[dict, None]:
+    if is_url(source):
+        return download_json(source)
+    else:
+        try:
+            with open(source, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(colorize(f"Error reading {source}: {str(e)}", Color.FAIL), file=sys.stderr)
+            return None
 
 
 def download_json(url: str) -> dict:
@@ -115,9 +134,9 @@ def main() -> int:
 
     downloaded_files = []
     with tempfile.TemporaryDirectory() as temp_dir:
-        for i, url in enumerate(urls):
-            print(f"Downloading from {url}...", flush=True)
-            data = download_json(url)
+        for i, source in enumerate(urls):
+            print(f"Processing {source}...", flush=True)
+            data = download_or_read_json(source)
             if data:
                 temp_file = os.path.join(temp_dir, f"template_{i}.json")
                 with open(temp_file, "w") as f:
@@ -125,10 +144,10 @@ def main() -> int:
                 downloaded_files.append(temp_file)
 
         if not downloaded_files:
-            print(colorize("No files were successfully downloaded.", Color.FAIL), file=sys.stderr)
+            print(colorize("No files were successfully processed.", Color.FAIL), file=sys.stderr)
             return 1
 
-        print(f"Successfully downloaded {len(downloaded_files)} files.", flush=True)
+        print(f"Successfully processed {len(downloaded_files)} files.", flush=True)
         
         try:
             merged_templates = merge_unique_templates([json.load(open(f)) for f in downloaded_files])
