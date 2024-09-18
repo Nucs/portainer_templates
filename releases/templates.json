@@ -1326,7 +1326,7 @@
       "categories": [
         "Productivity",
         "Development",
-        "No-code"
+        "Nocode"
       ],
       "description": "Open source no-code database and Airtable alternative.Create your own online database without technical experience. Our user friendly no-code tool gives you the powers of a developer without leaving your browser.",
       "logo": "https://].io/_nuxt/img/logo.1421f77.svg",
@@ -5377,7 +5377,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/deluge/config<br>mkdir -p /volume1/docker/deluge/downloads</p>",
       "description": "[Deluge](http://deluge-torrent.org/) is a lightweight, Free Software, cross-platform BitTorrent client. * Full Encryption * WebUI * Plugin System * Much more...",
       "categories": [
-        "File management"
+        "Filemanagement"
       ],
       "platform": "linux",
       "logo": "https://avatars2.githubusercontent.com/u/6733935?v=3&s=200",
@@ -5428,7 +5428,7 @@
     },
     {
       "categories": [
-        "File management"
+        "Filemanagement"
       ],
       "description": "[Deluge](http://deluge-torrent.org/) is a lightweight, Free Software, cross-platform BitTorrent client. * Full Encryption * WebUI * Plugin System * Much more...",
       "env": [
@@ -6223,7 +6223,7 @@
     },
     {
       "categories": [
-        "File management"
+        "Filemanagement"
       ],
       "description": "[Double Commander](https://doublecmd.sourceforge.io/) is a free cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.",
       "env": [
@@ -7240,7 +7240,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/emby/config<br>mkdir -p /volume1/docker/emby/data/tvshows<br>mkdir -p /volume1/docker/emby/data/movies<br></p>",
       "description": "[Emby](https://emby.media/) organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.",
       "categories": [
-        "Home media"
+        "Homemedia"
       ],
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/emby-logo.png",
@@ -9598,7 +9598,7 @@
     {
       "categories": [
         "Development",
-        "Project-management"
+        "Projectmanagement"
       ],
       "description": "Open-source end-to-end software development platform",
       "image": "gitlab/gitlab-ce:latest",
@@ -11049,7 +11049,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/homeassistant/config</p>",
       "description": "[Home Assistant Core](https://www.home-assistant.io/) - Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.",
       "categories": [
-        "Home automation"
+        "Homeautomation"
       ],
       "platform": "linux",
       "logo": "https://github.com/home-assistant/home-assistant.io/raw/next/source/images/favicon-192x192-full.png",
@@ -11088,7 +11088,7 @@
     },
     {
       "categories": [
-        "Smart home"
+        "Smarthome"
       ],
       "description": "HomeKit support for the impatient.",
       "logo": "https://raw.githubusercontent.com/homebridge/branding/master/logos/homebridge-color-round-stylized.png",
@@ -12872,7 +12872,7 @@
     },
     {
       "categories": [
-        "Continuous-integration"
+        "Continuousintegration"
       ],
       "description": "Open-source continuous integration tool",
       "env": [
@@ -16593,7 +16593,7 @@
     },
     {
       "categories": [
-        "Remote control"
+        "Remotecontrol"
       ],
       "description": "MeshCentral is a full computer management web site. With MeshCentral, you can run your own web server to remotely manage and control computers on a local network or anywhere on the internet. ",
       "logo": "https://repository-images.githubusercontent.com/101663032/a0f76700-4b4f-11eb-981e-ee7eea9fddf2",
@@ -22231,7 +22231,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/phpmyadmin/config</p>",
       "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
       "categories": [
-        "System tools"
+        "Systemtools"
       ],
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
@@ -26190,7 +26190,7 @@
     },
     {
       "categories": [
-        "Remote control"
+        "Remotecontrol"
       ],
       "description": "Rust Desk is an Open source virtual or remote desktop infrastructure for everyone!",
       "logo": "https://images.sftcdn.net/images/t_app-logo-xl,f_auto,dpr_2/p/735e7f11-0f1e-492d-bfa4-4be6eead5179/3131069239/rustdesk-unnamed.png",
@@ -26875,7 +26875,7 @@
       "title": "Sematext Docker Agent",
       "type": 2,
       "categories": [
-        "Log management",
+        "Logmanagement",
         "Monitoring"
       ],
       "description": "Collect logs, metrics and docker events",
@@ -29143,7 +29143,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/syslog-ng/config<br></p>",
       "description": "[syslog-ng](https://www.syslog-ng.com/products/open-source-log-management/) allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools.",
       "categories": [
-        "System tools"
+        "Systemtools"
       ],
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/syslog-ng-logo.png",
