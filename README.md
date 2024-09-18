@@ -14,6 +14,9 @@ It's designed to combine templates from various URLs and local files into a sing
 - Generates a single JSON file compatible with Portainer
 - Automated weekly updates via GitHub Actions
 - Distinction of templates between all sources
+- Case-insensitive grouping of templates
+- Generates both clean (grouped) and unclean (all) template files
+- Implements distinct-by-all approach before grouping
 ## Installation
 
 Add this URL in Portainer's settings:

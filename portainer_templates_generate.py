@@ -106,7 +106,7 @@ def group_and_distinct_templates(templates: List[dict]) -> List[dict]:
 
 def normalize_category(category: str) -> str:
     # Remove ':', remove whitespace, change case to first upper rest lower
-    return category.replace(':', '').strip().capitalize()
+    return category.replace(':', '').replace(' ', '').strip().capitalize()
 
 def merge_unique_templates(files: list[dict]) -> dict:
     version = None
