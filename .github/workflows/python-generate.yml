@@ -37,8 +37,11 @@ jobs:
         else
           git commit -m "Update templates.json"
           if [ "${{ github.event_name }}" == "push" ]; then
+            git pull --rebase origin ${{ github.ref }}
             git push origin HEAD:${{ github.ref }}
           elif [ "${{ github.event_name }}" == "pull_request" ]; then
-            git push origin HEAD:${{ github.head_ref }}
+            git fetch origin ${{ github.head_ref }}
+            git rebase origin/${{ github.head_ref }}
+            git push --force-with-lease origin HEAD:${{ github.head_ref }}
           fi
         fi
