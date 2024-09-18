@@ -519,7 +519,7 @@
     },
     {
       "categories": [
-        "API"
+        "Api"
       ],
       "description": "Apprise API was designed to easily fit into existing (and new) eco-systems that are looking for a simple notification solution.70+ services",
       "logo": "https://raw.githubusercontent.com/caronc/apprise/master/apprise/assets/themes/default/apprise-logo.png",
@@ -2501,7 +2501,7 @@
     },
     {
       "categories": [
-        "webserver"
+        "Webserver"
       ],
       "description": "HTTP/2 web server with automatic HTTPS",
       "image": "abiosoft/caddy:latest",
@@ -2901,7 +2901,7 @@
       "logo": "https://mediadepot.github.io/templates/img/cardigann.png",
       "image": "linuxserver/cardigann:latest",
       "categories": [
-        "Downloaders:"
+        "Downloaders"
       ],
       "ports": [
         "5060/tcp"
@@ -3653,7 +3653,7 @@
     },
     {
       "categories": [
-        "database"
+        "Database"
       ],
       "description": "CockroachDB cluster",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/cockroachdb.png",
@@ -3684,7 +3684,7 @@
     },
     {
       "categories": [
-        "database"
+        "Database"
       ],
       "command": "start --insecure",
       "description": "An open-source, survivable, strongly consistent, scale-out SQL database",
@@ -4243,8 +4243,8 @@
       "logo": "https://mediadepot.github.io/templates/img/couchpotato-icon.png",
       "image": "linuxserver/couchpotato:latest",
       "categories": [
-        "Downloaders:",
-        "MediaApp:Video"
+        "Downloaders",
+        "Mediaappvideo"
       ],
       "ports": [
         "5050/tcp"
@@ -4975,7 +4975,7 @@
     },
     {
       "categories": [
-        "FTP",
+        "Ftp",
         "Other",
         "Tools"
       ],
@@ -5377,7 +5377,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/deluge/config<br>mkdir -p /volume1/docker/deluge/downloads</p>",
       "description": "[Deluge](http://deluge-torrent.org/) is a lightweight, Free Software, cross-platform BitTorrent client. * Full Encryption * WebUI * Plugin System * Much more...",
       "categories": [
-        "File Management"
+        "File management"
       ],
       "platform": "linux",
       "logo": "https://avatars2.githubusercontent.com/u/6733935?v=3&s=200",
@@ -5428,7 +5428,7 @@
     },
     {
       "categories": [
-        "File Management"
+        "File management"
       ],
       "description": "[Deluge](http://deluge-torrent.org/) is a lightweight, Free Software, cross-platform BitTorrent client. * Full Encryption * WebUI * Plugin System * Much more...",
       "env": [
@@ -5985,7 +5985,7 @@
     },
     {
       "categories": [
-        "HomeAutomation",
+        "Homeautomation",
         "Management"
       ],
       "description": "Domoticz is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device.",
@@ -6223,7 +6223,7 @@
     },
     {
       "categories": [
-        "File Management"
+        "File management"
       ],
       "description": "[Double Commander](https://doublecmd.sourceforge.io/) is a free cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.",
       "env": [
@@ -6554,7 +6554,7 @@
     },
     {
       "categories": [
-        "DNS",
+        "Dns",
         "Tools"
       ],
       "description": "Duck DNS is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence.",
@@ -6638,8 +6638,8 @@
       "logo": "https://mediadepot.github.io/templates/img/duckdns.png",
       "image": "linuxserver/duckdns:latest",
       "categories": [
-        "Network:DNS",
-        "Tools:"
+        "Networkdns",
+        "Tools"
       ],
       "volumes": [],
       "env": [
@@ -6903,7 +6903,7 @@
       "logo": "https://mediadepot.github.io/templates/img/duplicati-icon.png",
       "image": "linuxserver/duplicati:latest",
       "categories": [
-        "Utility:Backup"
+        "Utilitybackup"
       ],
       "ports": [
         "8200/tcp"
@@ -7215,7 +7215,7 @@
     },
     {
       "categories": [
-        "database"
+        "Database"
       ],
       "description": "Open-source search and analytics engine",
       "image": "elasticsearch:latest",
@@ -7240,7 +7240,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/emby/config<br>mkdir -p /volume1/docker/emby/data/tvshows<br>mkdir -p /volume1/docker/emby/data/movies<br></p>",
       "description": "[Emby](https://emby.media/) organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.",
       "categories": [
-        "Home Media"
+        "Home media"
       ],
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/emby-logo.png",
@@ -8119,10 +8119,10 @@
       "logo": "https://mediadepot.github.io/templates/img/filebrowser-icon.png",
       "image": "mediadepot/filebrowser:latest",
       "categories": [
-        "Tools:",
-        "Network:Web",
-        "Network:Other",
-        "Tools:"
+        "Tools",
+        "Networkweb",
+        "Networkother",
+        "Tools"
       ],
       "ports": [
         "8080/tcp"
@@ -9597,8 +9597,8 @@
     },
     {
       "categories": [
-        "development",
-        "project-management"
+        "Development",
+        "Project-management"
       ],
       "description": "Open-source end-to-end software development platform",
       "image": "gitlab/gitlab-ce:latest",
@@ -10204,10 +10204,10 @@
       "logo": "https://mediadepot.github.io/templates/img/healthchecks-logo.png",
       "image": "linuxserver/healthchecks",
       "categories": [
-        "Tools:",
-        "Network:Web",
-        "Network:Other",
-        "Status:Stable"
+        "Tools",
+        "Networkweb",
+        "Networkother",
+        "Statusstable"
       ],
       "ports": [
         "8000/tcp"
@@ -10738,10 +10738,10 @@
       "logo": "https://mediadepot.github.io/templates/img/heimdall-icon.png",
       "image": "linuxserver/heimdall:latest",
       "categories": [
-        "Tools:",
-        "Network:Web",
-        "Network:Other",
-        "Status:Stable"
+        "Tools",
+        "Networkweb",
+        "Networkother",
+        "Statusstable"
       ],
       "ports": [
         "80/tcp",
@@ -11049,7 +11049,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/homeassistant/config</p>",
       "description": "[Home Assistant Core](https://www.home-assistant.io/) - Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.",
       "categories": [
-        "Home Automation"
+        "Home automation"
       ],
       "platform": "linux",
       "logo": "https://github.com/home-assistant/home-assistant.io/raw/next/source/images/favicon-192x192-full.png",
@@ -11088,7 +11088,7 @@
     },
     {
       "categories": [
-        "Smart Home"
+        "Smart home"
       ],
       "description": "HomeKit support for the impatient.",
       "logo": "https://raw.githubusercontent.com/homebridge/branding/master/logos/homebridge-color-round-stylized.png",
@@ -12251,7 +12251,7 @@
     },
     {
       "categories": [
-        "P2P"
+        "P2p"
       ],
       "description": "[Ipfs](https://ipfs.io/) - A peer-to-peer hypermedia protocol designed to make the web faster, safer, and more open.",
       "env": [
@@ -12298,7 +12298,7 @@
     },
     {
       "categories": [
-        "serverless"
+        "Serverless"
       ],
       "description": "Open-source serverless computing platform",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ironfunctions.png",
@@ -12425,8 +12425,8 @@
       "logo": "https://mediadepot.github.io/templates/img/jacket-icon.png",
       "image": "linuxserver/jackett:latest",
       "categories": [
-        "Downloaders:",
-        "Tools:"
+        "Downloaders",
+        "Tools"
       ],
       "ports": [
         "9117/tcp"
@@ -12872,7 +12872,7 @@
     },
     {
       "categories": [
-        "continuous-integration"
+        "Continuous-integration"
       ],
       "description": "Open-source continuous integration tool",
       "env": [
@@ -16428,7 +16428,7 @@
     },
     {
       "categories": [
-        "CMS"
+        "Cms"
       ],
       "description": "Medusa is an open-source headless commerce engine that enables developers to create amazing digital commerce experiences.",
       "logo": "https://user-images.githubusercontent.com/7554214/153162406-bf8fd16f-aa98-4604-b87b-e13ab4baf604.png",
@@ -16593,7 +16593,7 @@
     },
     {
       "categories": [
-        "Remote Control"
+        "Remote control"
       ],
       "description": "MeshCentral is a full computer management web site. With MeshCentral, you can run your own web server to remotely manage and control computers on a local network or anywhere on the internet. ",
       "logo": "https://repository-images.githubusercontent.com/101663032/a0f76700-4b4f-11eb-981e-ee7eea9fddf2",
@@ -16644,7 +16644,7 @@
     },
     {
       "categories": [
-        "OPS"
+        "Ops"
       ],
       "description": "Microsoft Operations Management Suite Linux agent.",
       "env": [
@@ -16879,7 +16879,7 @@
     },
     {
       "categories": [
-        "storage"
+        "Storage"
       ],
       "command": "server /data",
       "description": "A distributed object storage server built for cloud applications and devops",
@@ -17894,7 +17894,7 @@
       "title": "MySQL",
       "description": "The most popular open-source database",
       "categories": [
-        "database"
+        "Database"
       ],
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
@@ -19459,7 +19459,7 @@
     {
       "categories": [
         "Dashboard",
-        "IoT"
+        "Iot"
       ],
       "description": "Node-RED provides a browser-based flow editor that makes it easy to wire together flows using the wide range of nodes in the palette.",
       "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/node-red-icon.svg",
@@ -20076,10 +20076,10 @@
       "logo": "https://mediadepot.github.io/templates/img/ombi.png",
       "image": "linuxserver/ombi:latest",
       "categories": [
-        "Downloaders:",
-        "Network:Other",
-        "MediaApp:Video",
-        "Tools:"
+        "Downloaders",
+        "Networkother",
+        "Mediaappvideo",
+        "Tools"
       ],
       "ports": [
         "3579/tcp"
@@ -21204,10 +21204,10 @@
       "logo": "https://mediadepot.github.io/templates/img/overseerr.png",
       "image": "lscr.io/linuxserver/overseerr:latest",
       "categories": [
-        "Downloaders:",
-        "Network:Other",
-        "MediaApp:Video",
-        "Tools:"
+        "Downloaders",
+        "Networkother",
+        "Mediaappvideo",
+        "Tools"
       ],
       "ports": [
         "5055/tcp"
@@ -22231,7 +22231,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/phpmyadmin/config</p>",
       "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
       "categories": [
-        "System Tools"
+        "System tools"
       ],
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
@@ -23229,10 +23229,10 @@
       "logo": "https://mediadepot.github.io/templates/img/plex-requests-logo.jpeg",
       "image": "linuxserver/plexrequests:latest",
       "categories": [
-        "Downloaders:",
-        "Network:Other",
-        "MediaApp:Video",
-        "Tools:"
+        "Downloaders",
+        "Networkother",
+        "Mediaappvideo",
+        "Tools"
       ],
       "ports": [
         "3000/tcp"
@@ -23363,7 +23363,7 @@
     },
     {
       "categories": [
-        "portainer"
+        "Portainer"
       ],
       "description": "Manage all the resources in your Swarm cluster",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
@@ -23729,8 +23729,8 @@
       "logo": "https://mediadepot.github.io/templates/img/prowlarr-banner.png",
       "image": "ghcr.io/linuxserver/prowlarr:develop",
       "categories": [
-        "Downloaders:",
-        "Tools:"
+        "Downloaders",
+        "Tools"
       ],
       "ports": [
         "9696/tcp"
@@ -25054,8 +25054,8 @@
       "logo": "https://mediadepot.github.io/templates/img/radarr.png",
       "image": "linuxserver/radarr:latest",
       "categories": [
-        "Downloaders:",
-        "MediaApp:Video"
+        "Downloaders",
+        "Mediaappvideo"
       ],
       "ports": [
         "7878/tcp"
@@ -25476,8 +25476,8 @@
       "logo": "https://mediadepot.github.io/templates/img/readarr-logo.png",
       "image": "ghcr.io/linuxserver/readarr:nightly",
       "categories": [
-        "Downloaders:",
-        "MediaApp:Books"
+        "Downloaders",
+        "Mediaappbooks"
       ],
       "ports": [
         "8787/tcp"
@@ -25882,10 +25882,10 @@
       "logo": "https://mediadepot.github.io/templates/img/resilio.png",
       "image": "linuxserver/resilio-sync:latest",
       "categories": [
-        "Backup:",
-        "Cloud:",
-        "Network:Other",
-        "Tools:"
+        "Backup",
+        "Cloud",
+        "Networkother",
+        "Tools"
       ],
       "ports": [
         "8888/tcp",
@@ -26190,7 +26190,7 @@
     },
     {
       "categories": [
-        "Remote Control"
+        "Remote control"
       ],
       "description": "Rust Desk is an Open source virtual or remote desktop infrastructure for everyone!",
       "logo": "https://images.sftcdn.net/images/t_app-logo-xl,f_auto,dpr_2/p/735e7f11-0f1e-492d-bfa4-4be6eead5179/3131069239/rustdesk-unnamed.png",
@@ -26339,9 +26339,9 @@
       "logo": "https://mediadepot.github.io/templates/img/rtorrent-icon.png",
       "image": "mediadepot/rutorrent",
       "categories": [
-        "Downloaders:",
-        "Network:Other",
-        "Tools:"
+        "Downloaders",
+        "Networkother",
+        "Tools"
       ],
       "ports": [
         "80/tcp",
@@ -26875,7 +26875,7 @@
       "title": "Sematext Docker Agent",
       "type": 2,
       "categories": [
-        "Log Management",
+        "Log management",
         "Monitoring"
       ],
       "description": "Collect logs, metrics and docker events",
@@ -27947,8 +27947,8 @@
       "logo": "https://mediadepot.github.io/templates/img/sonarr-icon.png",
       "image": "linuxserver/sonarr:latest",
       "categories": [
-        "Downloaders:",
-        "MediaApp:Video"
+        "Downloaders",
+        "Mediaappvideo"
       ],
       "ports": [
         "8989/tcp"
@@ -28380,7 +28380,7 @@
     },
     {
       "categories": [
-        "database"
+        "Database"
       ],
       "description": "Microsoft SQL Server on Linux",
       "env": [
@@ -28405,7 +28405,7 @@
     },
     {
       "categories": [
-        "database"
+        "Database"
       ],
       "description": "Microsoft SQL Server Developer for Windows containers",
       "env": [
@@ -29143,7 +29143,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/syslog-ng/config<br></p>",
       "description": "[syslog-ng](https://www.syslog-ng.com/products/open-source-log-management/) allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools.",
       "categories": [
-        "System Tools"
+        "System tools"
       ],
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/syslog-ng-logo.png",
@@ -29245,7 +29245,7 @@
     {
       "categories": [
         "Network",
-        "VPN"
+        "Vpn"
       ],
       "description": "Tailscale lets you easily manage access to private resources, quickly SSH into devices on your network, and work securely from anywhere in the world.",
       "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/tailscale.jpg",
@@ -29379,8 +29379,8 @@
       "logo": "https://mediadepot.github.io/templates/img/tautulli-icon.png",
       "image": "linuxserver/tautulli:latest",
       "categories": [
-        "MediaServer:Other",
-        "Tools:"
+        "Mediaserverother",
+        "Tools"
       ],
       "ports": [
         "8181/tcp"
@@ -30219,7 +30219,7 @@
     {
       "categories": [
         "Other",
-        "VPN",
+        "Vpn",
         "Tools"
       ],
       "description": "This container contains OpenVPN and Transmission with a configuration\nwhere Transmission is running only when OpenVPN has an active tunnel.\nIt bundles configuration files for many popular VPN providers to make the setup easier.",
@@ -31201,7 +31201,7 @@
     },
     {
       "categories": [
-        "backup"
+        "Backup"
       ],
       "description": "Open-source network backup",
       "image": "cfstras/urbackup",
@@ -31613,7 +31613,7 @@
       "image": "containrrr/watchtower:latest",
       "command": "--cleanup --label-enable",
       "categories": [
-        "Tools:"
+        "Tools"
       ],
       "volumes": [
         {
@@ -32466,7 +32466,7 @@
     },
     {
       "categories": [
-        "CMS"
+        "Cms"
       ],
       "description": "Wordpress setup with a MySQL database",
       "env": [
@@ -32488,7 +32488,7 @@
     },
     {
       "categories": [
-        "CMS"
+        "Cms"
       ],
       "description": "Wordpress setup with a MySQL database",
       "env": [
@@ -32534,7 +32534,7 @@
     {
       "categories": [
         "Blog",
-        "CMS"
+        "Cms"
       ],
       "description": "WordPress is the simplest, most popular way to create your own website or blog.",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/800px-WordPress_blue_logo.svg.png",
