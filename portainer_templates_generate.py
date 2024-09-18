@@ -119,9 +119,13 @@ def merge_unique_templates(files: list[dict]) -> dict:
         all_templates.extend(f["templates"])
 
     distinct_templates = group_and_distinct_templates(all_templates)
+    
+    # Sort the distinct templates by title
+    sorted_templates = sorted(distinct_templates, key=lambda x: x.get('title', '').lower())
+    
     return {
         "version": version,
-        "templates": distinct_templates,
+        "templates": sorted_templates,
     }
 
 
