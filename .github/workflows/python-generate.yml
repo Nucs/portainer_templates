@@ -26,16 +26,16 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Generate templates
       run: |
-        python portainer_templates_generate.py -o releases/templates.json
+        python portainer_templates_generate.py
     - name: Commit and push if changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add releases/templates.json
+        git add releases/templates.json releases/templates_unclean.json
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Update templates.json"
+          git commit -m "[Automated] Regenerated templates"
           if [ "${{ github.event_name }}" == "push" ]; then
             git pull --rebase origin ${{ github.ref }}
             git push origin HEAD:${{ github.ref }}

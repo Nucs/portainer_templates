@@ -21,6 +21,8 @@ REM Run the Python script
 python portainer_templates_generate.py
 if !errorlevel! neq 0 (
     echo Failed to run portainer_templates_generate.py
+    echo Python script output:
+    python portainer_templates_generate.py
     exit /b !errorlevel!
 )
 

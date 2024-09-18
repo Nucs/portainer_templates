@@ -22,6 +22,7 @@ import urllib.request
 import traceback as tb
 from pathlib import Path
 from typing import List, Literal, NamedTuple, Union
+from itertools import groupby
 
 
 class Color(NamedTuple):
@@ -68,10 +69,44 @@ def download_json(url: str) -> dict:
         print(colorize(f"Error downloading {url}: {str(e)}", Color.FAIL), file=sys.stderr)
         return None
 
+def group_and_distinct_templates(templates: List[dict]) -> List[dict]:
+    def template_to_tuple(template):
+        return tuple(sorted((k, json.dumps(v, sort_keys=True).lower()) for k, v in template.items()))
+
+    # First, make templates distinct by all fields
+    distinct_templates = list({template_to_tuple(template): template for template in templates}.values())
+
+    def group_key(template):
+        def to_str(value):
+            return json.dumps(value, sort_keys=True).lower() if isinstance(value, dict) else str(value).lower()
+
+        return (
+            to_str(template.get("name", "")),
+            to_str(template.get("command", "")),
+            to_str(template.get("platform", "")),
+            ",".join(sorted(to_str(v) for v in template.get("volumes", []))),
+            ",".join(sorted(to_str(p) for p in template.get("ports", []))),
+            to_str(template.get("image", "")),
+            to_str(template.get("repository", "")),
+            to_str(template.get("type", ""))
+        )
+
+    def sort_key(template):
+        return sum(len(json.dumps(template.get(field, ""))) for field in ["env", "description", "title", "note", "ports"])
+
+    # Sort distinct templates by group key
+    sorted_templates = sorted(distinct_templates, key=group_key)
+
+    # Group templates and select the one with the highest sort key from each group
+    final_distinct_templates = []
+    for _, group in groupby(sorted_templates, key=group_key):
+        final_distinct_templates.append(max(group, key=sort_key))
+
+    return final_distinct_templates
 
 def merge_unique_templates(files: list[dict]) -> dict:
     version = None
-    unique_templates = []
+    all_templates = []
     for f in files:
         if version is None:
             version = f["version"]
@@ -89,13 +124,16 @@ def merge_unique_templates(files: list[dict]) -> dict:
             )
             sys.exit(1)
 
-        templates: list[dict] = f["templates"]
-        for t in templates:
-            if t not in unique_templates:
-                unique_templates.append(t)
+        all_templates.extend(f["templates"])
+
+    distinct_templates = group_and_distinct_templates(all_templates)
+    
+    # Sort the distinct templates by title
+    sorted_templates = sorted(distinct_templates, key=lambda x: x.get('title', '').lower())
+    
     return {
         "version": version,
-        "templates": unique_templates,
+        "templates": sorted_templates,
     }
 
 
@@ -118,6 +156,20 @@ def save_output(output: str, merged_templates: dict, num_files: int) -> None:
             flush=True,
         )
 
+def save_unclean_output(output: str, all_templates: dict, num_files: int) -> None:
+    with open(output, "w", encoding="utf-8") as f:
+        json.dump(all_templates, f, indent=2)
+    print(
+        colorize(
+            (
+                f"Saved unclean templates from {num_files} files\n"
+                f"Total templates: {len(all_templates['templates'])}\n"
+                f"Output file: {Path(f.name).absolute()}\n"
+            ),
+            Color.SUCCESS,
+        ),
+        flush=True,
+    )
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Download and merge Portainer templates from multiple URLs")
@@ -157,10 +209,27 @@ def main() -> int:
         print(f"Successfully processed {len(downloaded_files)} files.", flush=True)
         
         try:
+            # Load all templates without distinction/groupby
+            all_templates = {
+                "version": "2",
+                "templates": []
+            }
+            for f in downloaded_files:
+                data = json.load(open(f))
+                all_templates["templates"].extend(data["templates"])
+
+            # Sort all templates by title
+            all_templates["templates"] = sorted(all_templates["templates"], key=lambda x: x.get('title', '').lower())
+
+            # Save unclean templates
+            unclean_output = os.path.join(output_dir, "templates_unclean.json")
+            save_unclean_output(unclean_output, all_templates, len(downloaded_files))
+
+            # Process and save clean templates
             merged_templates = merge_unique_templates([json.load(open(f)) for f in downloaded_files])
             save_output(args.output, merged_templates, len(downloaded_files))
         except Exception as e:
-            print(colorize(f"Error merging templates: {str(e)}", Color.FAIL), file=sys.stderr)
+            print(colorize(f"Error processing templates: {str(e)}", Color.FAIL), file=sys.stderr)
             return 1
 
     return 0
