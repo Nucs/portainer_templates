@@ -10,12 +10,9 @@ Capable of combining templates from various URLs and local files into a single, 
 ## Features
 
 - Merges Portainer templates from multiple sources (URLs and local files)
-- Removes duplicate templates
 - Generates a single JSON file compatible with Portainer
 - Automated weekly updates via GitHub Actions
-- Distinction of templates between all sources
-- Case-insensitive distinction of templates
-- Generates both non-unqiue/unclean and clean template files
+- Removes duplicate templates, Case-insensitive distinction of templates between all sources
 ## Installation
 
 Add this URL in Portainer's settings:
