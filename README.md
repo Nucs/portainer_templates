@@ -44,9 +44,15 @@ https://raw.githubusercontent.com/Nucs/portainer_templates/main/releases/templat
    python portainer_templates_generate.py
    ```
 
+   This will generate two files:
+   - `releases/templates.json`: Contains the clean, grouped templates
+   - `releases/templates_unclean.json`: Contains all templates without grouping
+
    Optional arguments:
-   - `-o`, `--output`: Specify the output file path (default: `releases/templates.json`)
+   - `-o`, `--output`: Specify the output file path for clean templates (default: `releases/templates.json`)
    - `-s`, `--sources`: Specify the file containing source URLs (default: `sources.txt`)
+
+   Note: The unclean templates file will always be saved as `releases/templates_unclean.json`
 
 ### Automated Execution (Windows)
 
