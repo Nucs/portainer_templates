@@ -104,6 +104,10 @@ def group_and_distinct_templates(templates: List[dict]) -> List[dict]:
 
     return final_distinct_templates
 
+def normalize_category(category: str) -> str:
+    # Remove ':', remove whitespace, change case to first upper rest lower
+    return category.replace(':', '').strip().capitalize()
+
 def merge_unique_templates(files: list[dict]) -> dict:
     version = None
     all_templates = []
@@ -124,6 +128,9 @@ def merge_unique_templates(files: list[dict]) -> dict:
             )
             sys.exit(1)
 
+        for template in f["templates"]:
+            if "categories" in template:
+                template["categories"] = [normalize_category(cat) for cat in template["categories"]]
         all_templates.extend(f["templates"])
 
     distinct_templates = group_and_distinct_templates(all_templates)
