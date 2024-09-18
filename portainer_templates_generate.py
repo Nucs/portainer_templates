@@ -41,11 +41,12 @@ def is_url(path: str) -> bool:
 def read_urls_from_file(file_path: str) -> List[str]:
     base_dir = os.path.dirname(os.path.abspath(file_path))
     with open(file_path, 'r') as f:
-        return [
+        urls = [
             line.strip() if is_url(line.strip()) else os.path.join(base_dir, line.strip())
             for line in f
             if line.strip() and not line.strip().startswith('#')
         ]
+    return sorted(urls)
 
 def download_or_read_json(source: str) -> Union[dict, None]:
     if is_url(source):
