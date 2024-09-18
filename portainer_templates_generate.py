@@ -148,6 +148,20 @@ def save_output(output: str, merged_templates: dict, num_files: int) -> None:
             flush=True,
         )
 
+def save_unclean_output(output: str, all_templates: dict, num_files: int) -> None:
+    with open(output, "w", encoding="utf-8") as f:
+        json.dump(all_templates, f, indent=2)
+    print(
+        colorize(
+            (
+                f"Saved unclean templates from {num_files} files\n"
+                f"Total templates: {len(all_templates['templates'])}\n"
+                f"Output file: {Path(f.name).absolute()}\n"
+            ),
+            Color.SUCCESS,
+        ),
+        flush=True,
+    )
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Download and merge Portainer templates from multiple URLs")
@@ -187,10 +201,27 @@ def main() -> int:
         print(f"Successfully processed {len(downloaded_files)} files.", flush=True)
         
         try:
+            # Load all templates without distinction/groupby
+            all_templates = {
+                "version": "2",
+                "templates": []
+            }
+            for f in downloaded_files:
+                data = json.load(open(f))
+                all_templates["templates"].extend(data["templates"])
+
+            # Sort all templates by title
+            all_templates["templates"] = sorted(all_templates["templates"], key=lambda x: x.get('title', '').lower())
+
+            # Save unclean templates
+            unclean_output = os.path.join(output_dir, "templates_unclean.json")
+            save_unclean_output(unclean_output, all_templates, len(downloaded_files))
+
+            # Process and save clean templates
             merged_templates = merge_unique_templates([json.load(open(f)) for f in downloaded_files])
             save_output(args.output, merged_templates, len(downloaded_files))
         except Exception as e:
-            print(colorize(f"Error merging templates: {str(e)}", Color.FAIL), file=sys.stderr)
+            print(colorize(f"Error processing templates: {str(e)}", Color.FAIL), file=sys.stderr)
             return 1
 
     return 0
