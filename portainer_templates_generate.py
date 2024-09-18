@@ -72,8 +72,8 @@ def download_json(url: str) -> dict:
 def group_and_distinct_templates(templates: List[dict]) -> List[dict]:
     def group_key(template):
         def to_str(value):
-            return json.dumps(value) if isinstance(value, dict) else str(value)
-    
+            return json.dumps(value).lower() if isinstance(value, dict) else str(value).lower()
+
         return (
             to_str(template.get("command", "")),
             to_str(template.get("platform", "")),
